@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP Tech Solutions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MP Tech Solutions</h1>
+        <p>Soluções rápidas e seguras em TI, CFTV e manutenção</p>
+        <nav>
+            <a href="#servicos">Serviços</a>
+            <a href="#portfolio">Portfólio</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section id="sobre">
+        <h2>Quem Somos</h2>
+        <p>Somos uma empresa especializada em tecnologia, atuando com manutenção de computadores, instalação de CFTV, redes e suporte técnico em TI para residências e empresas.</p>
+    </section>
+
+    <section id="servicos">
+        <h2>Serviços</h2>
+        <ul>
+            <li>💻 Manutenção de computadores e notebooks</li>
+            <li>📹 Instalação e manutenção de câmeras CFTV</li>
+            <li>🌐 Infraestrutura de redes e cabeamento</li>
+            <li>🛠️ Suporte técnico para empresas</li>
+        </ul>
+    </section>
+
+    <section id="portfolio">
+        <h2>Portfólio</h2>
+        <p>Confira alguns de nossos trabalhos já realizados com excelência.</p>
+        <ul>
+            <li>✅ CFTV para loja de roupas em São José</li>
+            <li>✅ Manutenção de 10 PCs em escritório contábil</li>
+            <li>✅ Cabeamento completo em residência</li>
+        </ul>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>📞 WhatsApp: +55 (34) 99722-7301</p>
+        <p>📧 Email: contato@mptechsolutions.com</p>
+        <p>📍 Cidade: Sua Cidade</p>
+    </section>
+
+    <!-- Botão flutuante -->
+    <button id="btnOrcamento">💬 Solicitar Orçamento</button>
+
+    <!-- Modal do formulário -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Solicitar Orçamento</h2>
+            <form id="orcamentoForm">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required>
+
+                <label for="servico">Serviço desejado:</label>
+                <input type="text" id="servico" required>
+
+                <label for="detalhes">Detalhes do problema:</label>
+                <textarea id="detalhes" rows="4" required></textarea>
+
+                <button type="submit">Enviar via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 MP Tech Solutions. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
