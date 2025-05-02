@@ -1,20 +1,43 @@
+// Elementos
 const modal = document.getElementById("formModal");
 const btn = document.getElementById("btnOrcamento");
-const span = document.getElementsByClassName("close")[0];
+const closeBtn = document.querySelector(".close");
+const form = document.getElementById("orcamentoForm");
 
-btn.onclick = () => modal.style.display = "block";
-span.onclick = () => modal.style.display = "none";
-window.onclick = (e) => {
-    if (e.target == modal) modal.style.display = "none";
-};
+// Abrir o modal
+btn.addEventListener("click", () => {
+    modal.style.display = "flex";
+});
 
-document.getElementById("orcamentoForm").onsubmit = function(e) {
+// Fechar o modal ao clicar no X
+closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// Fechar o modal ao clicar fora
+window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
+// Enviar formulário via WhatsApp
+form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const nome = document.getElementById("nome").value;
-    const servico = document.getElementById("servico").value;
-    const detalhes = document.getElementById("detalhes").value;
+
+    const nome = document.getElementById("nome").value.trim();
+    const servico = document.getElementById("servico").value.trim();
+    const detalhes = document.getElementById("detalhes").value.trim();
+
+    if (!nome || !servico || !detalhes) {
+        alert("Por favor, preencha todos os campos.");
+        return;
+    }
 
     const mensagem = `Olá, meu nome é ${nome}. Gostaria de solicitar um orçamento para: ${servico}. Detalhes: ${detalhes}`;
     const url = `https://wa.me/5534997227301?text=${encodeURIComponent(mensagem)}`;
-    window.open(url, '_blank');
-};
+
+    window.open(url, "_blank");
+    modal.style.display = "none";
+    form.reset();
+});
