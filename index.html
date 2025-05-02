@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MP Tech Solutions</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src=imagens\logo\logomp.jpg alt="Logo MP Tech Solutions" class="logo" />
+        <h1>MP Tech Solutions</h1>
+        <p>Soluções rápidas e seguras em TI, CFTV e manutenção</p>
+        <nav>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section id="sobre">
+        <h2>Quem Somos</h2>
+        <p>Somos uma empresa especializada em tecnologia, atuando com manutenção de computadores, instalação de CFTV, redes e suporte técnico em TI para residências e empresas.</p>
+    </section>
+
+    <section id="servicos">
+        <h2>Serviços</h2>
+        <ul>
+            <li>💻 Manutenção de computadores e notebooks</li>
+            <li>📹 Instalação e manutenção de câmeras CFTV</li>
+            <li>🌐 Infraestrutura de redes e cabeamento</li>
+            <li>🛠️ Suporte técnico para empresas</li>
+            <li>🔒 Controle de acesso</li>
+            <li>🖨️ Manutenção de impressoras</li>
+            <li>📦 Backup e configuração de servidores</li>
+            <li>💼 Consultoria em TI</li>
+        </ul>
+    </section>
+
+    <section id="contato">
+        <h2>Fale Conosco</h2>
+        <p><i class="fas fa-phone"></i> WhatsApp: <a href="https://wa.me/5534997227301" target="_blank">+55 (34) 99722-7301</a></p>
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:MatheusPudolskTechSolutions@gmail.com">MatheusPudolskTechSolutions@gmail.com</a></p>
+        <p><i class="fab fa-instagram"></i> Instagram: <a href="https://instagram.com/MPTechSolutions" target="_blank">@MPTechSolutions</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Uberlândia-MG</p>
+    </section>
+
+    <!-- Botão flutuante -->
+    <button id="btnOrcamento">💬 Solicitar Orçamento</button>
+
+    <!-- Modal do formulário -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Solicitar Orçamento</h2>
+            <form id="orcamentoForm">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required />
+
+                <label for="servico">Serviço desejado:</label>
+                <select id="servico" required>
+                    <option value="" disabled selected>Selecione um serviço</option>
+                    <option value="Manutenção de computadores e notebooks">Manutenção de computadores e notebooks</option>
+                    <option value="Instalação de câmeras CFTV">Instalação de câmeras CFTV</option>
+                    <option value="Cabeamento e redes">Cabeamento e redes</option>
+                    <option value="Suporte técnico para empresas">Suporte técnico para empresas</option>
+                    <option value="Controle de acesso">Controle de acesso</option>
+                    <option value="Configuração de servidores e backups">Configuração de servidores e backups</option>
+                    <option value="Manutenção de impressoras">Manutenção de impressoras</option>
+                    <option value="Consultoria em TI">Consultoria em TI</option>
+                </select>
+
+                <label for="detalhes">Detalhes do problema:</label>
+                <textarea id="detalhes" rows="4" required></textarea>
+
+                <button type="submit">Enviar via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 MP Tech Solutions. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
