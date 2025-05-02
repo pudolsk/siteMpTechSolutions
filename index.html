@@ -9,14 +9,20 @@
 </head>
 <body>
     <header>
-        <img src=imagens\logo\logomp.jpg alt="Logo MP Tech Solutions" class="logo" />
-        <h1>MP Tech Solutions</h1>
-        <p>Soluções rápidas e seguras em TI, CFTV e manutenção</p>
-        <nav>
+        <div class="header-container">
+            <img src="imagens/logo/logomp.jpg" alt="Logo MP Tech Solutions" class="logo" />
+            <div class="header-texto">
+                <h1>MP Tech Solutions</h1>
+                <p>Soluções rápidas e seguras em TI, CFTV e manutenção</p>
+            </div>
+        </div>
+        <nav class="menu">
             <a href="#servicos">Serviços</a>
             <a href="#contato">Contato</a>
         </nav>
     </header>
+    
+    
 
     <section id="sobre">
         <h2>Quem Somos</h2>
@@ -57,6 +63,9 @@
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" required />
 
+                <label for="contato">Meio de Contato (e-mail ou telefone):</label>
+                <input type="text" id="contato" required placeholder="ex: email@dominio.com ou (34) 91234-5678" />
+
                 <label for="servico">Serviço desejado:</label>
                 <select id="servico" required>
                     <option value="" disabled selected>Selecione um serviço</option>
@@ -70,7 +79,7 @@
                     <option value="Consultoria em TI">Consultoria em TI</option>
                 </select>
 
-                <label for="detalhes">Detalhes do problema:</label>
+                <label for="detalhes">Informações adicionais:</label>
                 <textarea id="detalhes" rows="4" required></textarea>
 
                 <button type="submit">Enviar via WhatsApp</button>
