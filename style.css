@@ -398,6 +398,41 @@ footer {
     }
 }
 
+@media (max-width: 700px) {
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .logo {
+        max-width: 90px;
+        margin: 0 auto 10px auto;
+    }
+    .header-texto h1 {
+        font-size: 1.5em;
+    }
+    .menu-central {
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 1em;
+        padding: 10px 0;
+    }
+    .centralizado {
+        padding: 18px 6px;
+        font-size: 1em;
+    }
+    .footer-container {
+        padding: 10px 4px;
+        font-size: 0.95em;
+    }
+    .btn-flutuante {
+        right: 10px;
+        bottom: 10px;
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+}
+
 @media (max-width: 500px) {
     nav.menu a {
         display: block;
@@ -411,6 +446,18 @@ footer {
         bottom: 10px;
         padding: 10px 12px;
         font-size: 14px;
+    }
+}
+
+@media (max-width: 430px) {
+    .menu-central {
+        flex-direction: column;
+        gap: 4px;
+        font-size: 0.98em;
+    }
+    .footer-menu {
+        display: block;
+        text-align: center;
     }
 }
 
