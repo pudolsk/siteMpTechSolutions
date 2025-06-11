@@ -30,23 +30,59 @@
         <section class="centralizado">
             <h2>Serviços</h2>
             <div class="servicos-grid">
-                <a class="servico-item servico-btn" href="https://wa.me/5534997227301?text=Olá! Gostaria de solicitar manutenção de computadores e notebooks." target="_blank"><span class="servico-icone">💻</span><span>Manutenção de computadores e notebooks</span></a>
-                <a class="servico-item servico-btn" href="https://wa.me/5534997227301?text=Olá! Gostaria de solicitar instalação ou manutenção de câmeras CFTV." target="_blank"><span class="servico-icone">📹</span><span>Instalação e manutenção de câmeras CFTV</span></a>
-                <a class="servico-item servico-btn" href="https://wa.me/5534997227301?text=Olá! Preciso de infraestrutura de redes e cabeamento." target="_blank"><span class="servico-icone">🌐</span><span>Infraestrutura de redes e cabeamento</span></a>
-                <a class="servico-item servico-btn" href="https://wa.me/5534997227301?text=Olá! Gostaria de suporte técnico para empresas." target="_blank"><span class="servico-icone">🛠️</span><span>Suporte técnico para empresas</span></a>
-                <a class="servico-item servico-btn" href="https://wa.me/5534997227301?text=Olá! Tenho interesse em controle de acesso." target="_blank"><span class="servico-icone">🔒</span><span>Controle de acesso</span></a>
-                <a class="servico-item servico-btn" href="https://wa.me/5534997227301?text=Olá! Preciso de manutenção de impressoras." target="_blank"><span class="servico-icone">🖨️</span><span>Manutenção de impressoras</span></a>
-                <a class="servico-item servico-btn" href="https://wa.me/5534997227301?text=Olá! Preciso de backup e configuração de servidores." target="_blank"><span class="servico-icone">📦</span><span>Backup e configuração de servidores</span></a>
-                <a class="servico-item servico-btn" href="https://wa.me/5534997227301?text=Olá! Gostaria de consultoria em TI." target="_blank"><span class="servico-icone">💼</span><span>Consultoria em TI</span></a>
+                <button class="servico-item servico-btn" data-servico="computador"><span class="servico-icone">💻</span><span>Manutenção de computadores e notebooks</span></button>
+                <button class="servico-item servico-btn" data-servico="cftv"><span class="servico-icone">📹</span><span>Instalação e manutenção de câmeras CFTV</span></button>
+                <button class="servico-item servico-btn" data-servico="redes"><span class="servico-icone">🌐</span><span>Infraestrutura de redes e cabeamento</span></button>
+                <button class="servico-item servico-btn" data-servico="suporte"><span class="servico-icone">🛠️</span><span>Suporte técnico para empresas</span></button>
+                <button class="servico-item servico-btn" data-servico="acesso"><span class="servico-icone">🔒</span><span>Controle de acesso</span></button>
+                <button class="servico-item servico-btn" data-servico="impressora"><span class="servico-icone">🖨️</span><span>Manutenção de impressoras</span></button>
+                <button class="servico-item servico-btn" data-servico="servidor"><span class="servico-icone">📦</span><span>Backup e configuração de servidores</span></button>
+                <button class="servico-item servico-btn" data-servico="consultoria"><span class="servico-icone">💼</span><span>Consultoria em TI</span></button>
             </div>
         </section>
+        <!-- Modal explicação serviço -->
+        <div id="modalServico" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalServicoTitle" style="display:none;">
+            <div class="modal-content">
+                <span class="close" tabindex="0" aria-label="Fechar">&times;</span>
+                <h2 id="modalServicoTitle">Serviço</h2>
+                <p id="modalServicoTexto"></p>
+                <a id="btnServicoWhats" href="#" target="_blank" class="cta-link" style="display:inline-block;margin-top:18px;width:100%;text-align:center;">Solicitar orçamento via WhatsApp</a>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="footer-container">
             <p>&copy; 2025 MP Tech Solutions. Todos os direitos reservados.</p>
         </div>
     </footer>
-    <button id="btnOrcamento" class="btn-flutuante">💬 Solicitar Orçamento</button>
+    <button id="btnOrcamento" class="btn-flutuante" aria-label="Solicitar Orçamento">💬 Solicitar Orçamento</button>
+    <div id="formModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none;">
+        <div class="modal-content">
+            <span class="close" tabindex="0" aria-label="Fechar">&times;</span>
+            <h2 id="modalTitle">Solicitar Orçamento</h2>
+            <form id="orcamentoForm">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required />
+                <label for="contato">Meio de Contato (e-mail ou telefone):</label>
+                <input type="text" id="contato" required placeholder="ex: email@dominio.com ou (34) 91234-5678" />
+                <label for="servico">Serviço desejado:</label>
+                <select id="servico" required>
+                    <option value="" disabled selected>Selecione um serviço</option>
+                    <option value="Manutenção de computadores e notebooks">Manutenção de computadores e notebooks</option>
+                    <option value="Instalação de câmeras CFTV">Instalação de câmeras CFTV</option>
+                    <option value="Cabeamento e redes">Cabeamento e redes</option>
+                    <option value="Suporte técnico para empresas">Suporte técnico para empresas</option>
+                    <option value="Controle de acesso">Controle de acesso</option>
+                    <option value="Configuração de servidores e backups">Configuração de servidores e backups</option>
+                    <option value="Manutenção de impressoras">Manutenção de impressoras</option>
+                    <option value="Consultoria em TI">Consultoria em TI</option>
+                </select>
+                <label for="detalhes">Informações adicionais:</label>
+                <textarea id="detalhes" rows="4" required></textarea>
+                <button type="submit">Enviar via WhatsApp</button>
+            </form>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
