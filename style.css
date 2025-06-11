@@ -82,10 +82,44 @@ nav.menu a:hover {
     color: #00e6e6;
 }
 
+/* Menu Central */
+.menu-central {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    background: #22304a;
+    padding: 18px 0;
+    border-radius: 0 0 12px 12px;
+    margin-bottom: 32px;
+}
+
+.menu-central a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 8px 18px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.menu-central a:hover, .menu-central a.active {
+    background: #25D366;
+    color: #192734;
+}
+
 /* Seções */
 section {
     padding: 30px 20px;
     background-color: #243447; /* levemente mais claro que o fundo */
+}
+
+/* Centralizado */
+.centralizado {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    text-align: center;
 }
 
 /* Rodapé */
@@ -115,6 +149,13 @@ footer {
     cursor: pointer;
     font-size: 16px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: background 0.2s, transform 0.2s;
+}
+
+#btnOrcamento:hover {
+    background: #1ebc5d;
+    transform: scale(1.07);
 }
 
 /* Modal */
@@ -192,4 +233,213 @@ footer {
     color: #888;
     margin-top: -10px;
     margin-right: -5px;
+}
+
+/* Diferenciais */
+.diferenciais-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    justify-content: center;
+}
+.diferenciais-lista li {
+    background: #22304a;
+    border-radius: 8px;
+    padding: 18px 24px;
+    color: #fff;
+    font-size: 1.1em;
+    min-width: 220px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.diferenciais-lista i {
+    color: #00e6e6;
+    font-size: 1.5em;
+}
+
+/* CTA */
+.cta-section {
+    background: linear-gradient(90deg, #25D366 0%, #1e2a38 100%);
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px 30px 20px;
+    margin: 40px 0 0 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+.cta-link {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.cta-link:hover {
+    color: #192734;
+}
+
+/* Depoimentos */
+#depoimentos {
+    background: #243447;
+    border-radius: 12px;
+    margin: 40px 0 0 0;
+    padding: 30px 20px;
+    text-align: center;
+}
+.depoimento {
+    background: #1e2a38;
+    color: #fff;
+    border-radius: 8px;
+    margin: 18px auto;
+    padding: 18px 24px;
+    max-width: 500px;
+    font-style: italic;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.depoimento span {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.95em;
+    color: #00e6e6;
+    font-style: normal;
+}
+
+/* FAQ */
+#faq {
+    margin: 40px 0 0 0;
+    padding: 30px 20px;
+    background: #22304a;
+    border-radius: 12px;
+}
+#faq h2 {
+    text-align: center;
+    color: #fff;
+}
+#faq details {
+    background: #1e2a38;
+    color: #fff;
+    border-radius: 6px;
+    margin: 12px 0;
+    padding: 12px 18px;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+#faq summary {
+    font-weight: bold;
+    font-size: 1.08em;
+    outline: none;
+}
+#faq p {
+    margin: 10px 0 0 0;
+    font-size: 0.98em;
+}
+
+/* Grid de Serviços */
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+    margin: 28px 0 0 0;
+    padding: 0;
+}
+.servico-item {
+    background: #22304a;
+    border-radius: 10px;
+    padding: 22px 18px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 1.08em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: background 0.2s, transform 0.2s;
+}
+.servico-item:hover {
+    background: #25D366;
+    color: #192734;
+    transform: translateY(-3px) scale(1.03);
+}
+.servico-icone {
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.servico-btn {
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.servico-btn:hover {
+    background: #25D366;
+    color: #192734;
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 4px 16px rgba(37,211,102,0.15);
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .header-texto h1 {
+        font-size: 2em;
+    }
+    section {
+        padding: 20px 5px;
+    }
+    .modal-content {
+        max-width: 95vw;
+    }
+}
+
+@media (max-width: 500px) {
+    nav.menu a {
+        display: block;
+        margin: 10px 0;
+    }
+    .logo {
+        max-width: 120px;
+    }
+    #btnOrcamento {
+        right: 10px;
+        bottom: 10px;
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Efeitos de hover e foco */
+nav.menu a:focus, nav.menu a:hover {
+    outline: 2px solid #00e6e6;
+    outline-offset: 2px;
+}
+
+.footer-menu a {
+    color: #00e6e6;
+    text-decoration: none;
+    margin: 0 5px;
+    font-weight: 500;
+}
+.footer-menu a:hover, .footer-menu a:focus {
+    text-decoration: underline;
+    color: #fff;
+}
+
+/* Contraste para textos sobre imagens */
+.header-texto h1, .header-texto p {
+    text-shadow: 1px 1px 6px #000;
+}
+
+/* Feedback visual após envio do formulário */
+#formFeedback {
+    color: #25D366;
+    text-align: center;
+    margin-bottom: 10px;
+    display: none;
 }
