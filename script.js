@@ -44,6 +44,7 @@ form.addEventListener("submit", (e) => {
 });
 
 // Corrige escopo duplicado para variáveis globais
+// Unifica e otimiza o controle de modais e botões
 window.addEventListener('DOMContentLoaded', function() {
     // Botão flutuante/modal orçamento universal
     var btnsOrcamento = document.querySelectorAll('#btnOrcamento');
@@ -154,19 +155,19 @@ window.addEventListener('DOMContentLoaded', function() {
             modalServico.style.display = 'none';
         }
     });
-});
 
-// Menu expansivo responsivo
-const menuToggle = document.getElementById('menuToggle');
-const menuCentral = document.getElementById('menuCentral');
-if (menuToggle && menuCentral) {
-    menuToggle.addEventListener('click', () => {
-        menuCentral.classList.toggle('open');
-    });
-    // Fecha o menu ao clicar em um link (mobile UX)
-    menuCentral.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            menuCentral.classList.remove('open');
+    // Menu expansivo responsivo
+    const menuToggle = document.getElementById('menuToggle');
+    const menuCentral = document.getElementById('menuCentral');
+    if (menuToggle && menuCentral) {
+        menuToggle.addEventListener('click', () => {
+            menuCentral.classList.toggle('open');
         });
-    });
-}
+        // Fecha o menu ao clicar em um link (mobile UX)
+        menuCentral.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuCentral.classList.remove('open');
+            });
+        });
+    }
+});
