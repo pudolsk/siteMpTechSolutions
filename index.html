@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>MP Tech Solutions</title>
+    <meta name="description" content="Soluções rápidas, seguras e personalizadas em TI, CFTV, redes, manutenção, consultoria e criação de sites para residências e empresas em Uberlândia e região. Atendimento ágil, transparente e de alta qualidade." />
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" type="image/jpeg" href="imagens/logo/logomp.jpg" />
@@ -13,78 +14,115 @@
         <div class="header-container">
             <img src="imagens/logo/logomp.jpg" alt="Logo da MP Tech Solutions, um M e P estilizados em azul e branco" class="logo" />
             <div class="header-texto">
-                <h1>MP Tech Solutions</h1>
-                <p>Soluções rápidas e seguras em TI, CFTV e manutenção</p>
+                <h1 class="titulo-principal">MP Tech Solutions</h1>
+                <p class="subtitulo">Soluções rápidas e seguras em TI, CFTV e manutenção</p>
             </div>
         </div>
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
-        <nav class="menu-central" id="menuCentral">
-            <a href="index.html" style="color:#00e6e6;font-weight:bold;">Início</a>
-            <a href="servicos.html" style="color:#00e6e6;font-weight:bold;">Serviços</a>
-            <a href="diferenciais.html" style="color:#00e6e6;font-weight:bold;">Diferenciais</a>
-            <a href="depoimentos.html" style="color:#00e6e6;font-weight:bold;">Depoimentos</a>
-            <a href="faq.html" style="color:#00e6e6;font-weight:bold;">FAQ</a>
-            <a href="contato.html" style="color:#00e6e6;font-weight:bold;">Contato</a>
+        <nav class="menu-central" id="menuCentral" aria-label="Menu principal">
+            <a href="index.html" aria-label="Ir para a página inicial">Início</a>
+            <a href="servicos.html" aria-label="Ver serviços">Serviços</a>
+            <a href="diferenciais.html" aria-label="Ver diferenciais">Diferenciais</a>
+            <a href="depoimentos.html" aria-label="Ver depoimentos">Depoimentos</a>
+            <a href="faq.html" aria-label="Ver perguntas frequentes">FAQ</a>
+            <a href="contato.html" aria-label="Ir para a página de contato">Contato</a>
         </nav>
     </header>
     <main>
-    <section class="centralizado">
-        <img src="imagens/logo/logomp.jpg" alt="Logo da MP Tech Solutions" class="logo" style="max-width:120px;margin-bottom:18px;" />
-        <h1 style="font-size:2.1em;margin-bottom:10px;">MP Tech Solutions</h1>
-        <p style="font-size:1.15em;max-width:420px;margin:0 auto 18px auto;">Bem-vindo à MP Tech Solutions!</p>
-        <p style="font-size:1.08em;max-width:520px;margin:0 auto 18px auto;">
-            Somos uma empresa jovem e inovadora, apaixonada por tecnologia e comprometida em oferecer soluções rápidas, seguras e personalizadas para residências e empresas.<br><br>
-            <strong>Missão:</strong> Facilitar o dia a dia dos nossos clientes com atendimento ágil, transparente e de alta qualidade.<br>
-            <strong>Visão:</strong> Ser referência em tecnologia, suporte e confiança em Uberlândia e região.<br>
-            <strong>Valores:</strong> Ética, respeito, inovação, proximidade e excelência no atendimento.
-        </p>
-        <p style="font-size:1.08em;max-width:520px;margin:0 auto 18px auto;">
-            Atuamos com manutenção de computadores, instalação de CFTV, redes, consultoria, suporte técnico e muito mais.<br>
-            Nosso objetivo é garantir tranquilidade e segurança para você e seu negócio.
-        </p>
-        <p style="font-size:1.08em;max-width:520px;margin:0 auto 18px auto;">
-            <strong>Siga nosso Instagram:</strong> <a href="https://instagram.com/MPTechSolutions" target="_blank" style="color:#00e6e6;font-weight:bold;text-decoration:underline;">@MPTechSolutions</a> para acompanhar novidades, dicas e bastidores do nosso trabalho!
-        </p>
-        <p style="font-size:1.08em;max-width:520px;margin:0 auto 18px auto;">
-            <strong>Quer um orçamento?</strong> Clique na página <a href="contato.html" style="color:#00e6e6;font-weight:bold;text-decoration:underline;">Contato</a> ou utilize o botão flutuante de orçamento ao lado!
-        </p>
-    </section>
-    <!-- Botão flutuante e modal de orçamento -->
-    <button id="btnOrcamento" class="btn-flutuante" aria-label="Solicitar Orçamento">💬 Solicitar Orçamento</button>
-    <div id="formModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none;">
-        <div class="modal-content">
-            <span class="close" tabindex="0" aria-label="Fechar">&times;</span>
-            <h2 id="modalTitle">Solicitar Orçamento</h2>
-            <form id="orcamentoForm">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" required />
-                <label for="contato">Meio de Contato (e-mail ou telefone):</label>
-                <input type="text" id="contato" required placeholder="ex: email@dominio.com ou (34) 91234-5678" />
-                <label for="servico">Serviço desejado:</label>
-                <select id="servico" required>
-                    <option value="" disabled selected>Selecione um serviço</option>
-                    <option value="Manutenção de computadores e notebooks">Manutenção de computadores e notebooks</option>
-                    <option value="Instalação de câmeras CFTV">Instalação de câmeras CFTV</option>
-                    <option value="Cabeamento e redes">Cabeamento e redes</option>
-                    <option value="Suporte técnico para empresas">Suporte técnico para empresas</option>
-                    <option value="Controle de acesso">Controle de acesso</option>
-                    <option value="Configuração de servidores e backups">Configuração de servidores e backups</option>
-                    <option value="Manutenção de impressoras">Manutenção de impressoras</option>
-                    <option value="Consultoria em TI">Consultoria em TI</option>
-                </select>
-                <label for="detalhes">Informações adicionais:</label>
-                <textarea id="detalhes" rows="4" required></textarea>
-                <button type="submit">Enviar via WhatsApp</button>
-            </form>
+        <!-- Bloco institucional centralizado -->
+        <section class="bloco-institucional">
+            <img src="imagens/logo/logomp.jpg" alt="Logo da MP Tech Solutions" class="logo logo-institucional" />
+            <h1 class="titulo-principal">MP Tech Solutions</h1>
+            <p class="bem-vindo">Bem-vindo à MP Tech Solutions!</p>
+            <p class="descricao">Soluções rápidas, seguras e personalizadas em TI, CFTV, redes, manutenção, consultoria e criação de sites para residências e empresas.</p>
+            <div class="institucional-info">
+                <p><b>Missão:</b> Facilitar o dia a dia dos nossos clientes com atendimento ágil, transparente e de alta qualidade.</p>
+                <p><b>Visão:</b> Ser referência em tecnologia, suporte e confiança em Uberlândia e região.</p>
+                <p><b>Valores:</b> Ética, respeito, inovação, proximidade e excelência no atendimento.</p>
+            </div>
+            <p class="descricao">Nosso objetivo é garantir tranquilidade e segurança para você e seu negócio.</p>
+            <a href="contato.html" class="cta-link">Solicite um orçamento</a>
+        </section>
+
+        <!-- Principais serviços em cards -->
+        <section class="servicos-destaque">
+            <h2 class="titulo-servicos">Nossas Soluções</h2>
+            <div class="servicos-grid">
+                <div class="servico-item" data-servico="computador" style="background:linear-gradient(120deg,#22304a 80%,#25D366 100%);"><span class="servico-icone" style="color:#25D366;">💻</span><span>Manutenção de computadores e notebooks</span></div>
+                <div class="servico-item" data-servico="cftv" style="background:linear-gradient(120deg,#22304a 80%,#1e7fc6 100%);"><span class="servico-icone" style="color:#1e7fc6;">📹</span><span>Instalação e manutenção de câmeras CFTV</span></div>
+                <div class="servico-item" data-servico="redes" style="background:linear-gradient(120deg,#22304a 80%,#e60073 100%);"><span class="servico-icone" style="color:#e60073;">🌐</span><span>Infraestrutura de redes e cabeamento</span></div>
+                <div class="servico-item" data-servico="suporte" style="background:linear-gradient(120deg,#22304a 80%,#4ecb8f 100%);"><span class="servico-icone" style="color:#4ecb8f;">🛠️</span><span>Suporte técnico para empresas</span></div>
+                <div class="servico-item" data-servico="acesso" style="background:linear-gradient(120deg,#22304a 80%,#00e6e6 100%);"><span class="servico-icone" style="color:#00e6e6;">🔒</span><span>Controle de acesso</span></div>
+                <div class="servico-item" data-servico="impressora" style="background:linear-gradient(120deg,#22304a 80%,#a366e6 100%);"><span class="servico-icone" style="color:#a366e6;">🖨️</span><span>Manutenção de impressoras</span></div>
+                <div class="servico-item" data-servico="servidor" style="background:linear-gradient(120deg,#22304a 80%,#f9d923 100%);"><span class="servico-icone" style="color:#f9d923;">📦</span><span>Backup e configuração de servidores</span></div>
+                <div class="servico-item" data-servico="consultoria" style="background:linear-gradient(120deg,#22304a 80%,#1e7fc6 100%);"><span class="servico-icone" style="color:#1e7fc6;">💼</span><span>Consultoria em TI</span></div>
+                <div class="servico-item" data-servico="sites" style="background:linear-gradient(120deg,#22304a 80%,#ff9800 100%);"><span class="servico-icone" style="color:#ff9800;">🌟</span><span>Criação de sites personalizados</span></div>
+            </div>
+        </section>
+        <!-- Modal explicação serviço -->
+        <div id="modalServico" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalServicoTitle" style="display:none;">
+            <div class="modal-content">
+                <span class="close" tabindex="0" aria-label="Fechar">&times;</span>
+                <h2 id="modalServicoTitle">Serviço</h2>
+                <p id="modalServicoTexto"></p>
+                <a id="btnServicoWhats" href="#" target="_blank" class="cta-link">Solicitar orçamento via WhatsApp</a>
+            </div>
         </div>
-    </div>
+        <button id="btnOrcamento" class="btn-flutuante" aria-label="Solicitar Orçamento">💬 Solicitar Orçamento</button>
+        <div id="formModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none;">
+            <div class="modal-content">
+                <span class="close" tabindex="0" aria-label="Fechar">&times;</span>
+                <h2 id="modalTitle">Solicitar Orçamento</h2>
+                <form id="orcamentoForm">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required />
+                    <label for="contato">Meio de Contato (e-mail ou telefone):</label>
+                    <input type="text" id="contato" required placeholder="ex: email@dominio.com ou (34) 91234-5678" />
+                    <label for="servico">Serviço desejado:</label>
+                    <select id="servico" required>
+                        <option value="" disabled selected>Selecione um serviço</option>
+                        <option value="Manutenção de computadores e notebooks">Manutenção de computadores e notebooks</option>
+                        <option value="Instalação de câmeras CFTV">Instalação de câmeras CFTV</option>
+                        <option value="Cabeamento e redes">Cabeamento e redes</option>
+                        <option value="Suporte técnico para empresas">Suporte técnico para empresas</option>
+                        <option value="Controle de acesso">Controle de acesso</option>
+                        <option value="Configuração de servidores e backups">Configuração de servidores e backups</option>
+                        <option value="Manutenção de impressoras">Manutenção de impressoras</option>
+                        <option value="Consultoria em TI">Consultoria em TI</option>
+                        <option value="Criação de sites personalizados">Criação de sites personalizados</option>
+                    </select>
+                    <label for="detalhes">Informações adicionais:</label>
+                    <textarea id="detalhes" rows="4" required></textarea>
+                    <button type="submit">Enviar via WhatsApp</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Diferenciais em destaque -->
+        <section class="diferenciais-destaque">
+            <h2 class="titulo-diferenciais">Nossos Diferenciais</h2>
+            <div class="diferenciais-lista">
+                <div class="diferencial-card"><i class="fas fa-bolt" style="color:#25D366; font-size:1.5em;"></i> Atendimento rápido e personalizado</div>
+                <div class="diferencial-card"><i class="fas fa-shield-alt" style="color:#1e7fc6; font-size:1.5em;"></i> Garantia em todos os serviços</div>
+                <div class="diferencial-card"><i class="fas fa-user-check" style="color:#e60073; font-size:1.5em;"></i> Suporte remoto e presencial</div>
+                <div class="diferencial-card"><i class="fas fa-certificate" style="color:#4ecb8f; font-size:1.5em;"></i> Profissionais qualificados</div>
+                <div class="diferencial-card"><i class="fas fa-headset" style="color:#00e6e6; font-size:1.5em;"></i> Suporte pós-venda</div>
+                <div class="diferencial-card"><i class="fas fa-lightbulb" style="color:#f9d923; font-size:1.5em;"></i> Soluções inovadoras e sob medida</div>
+                <div class="diferencial-card"><i class="fas fa-clock" style="color:#a366e6; font-size:1.5em;"></i> Resposta ágil e acompanhamento contínuo</div>
+            </div>
+        </section>
+
+        <!-- CTA final -->
+        <section class="cta-final">
+            <a href="contato.html" class="cta-link">Fale com a MP Tech Solutions</a>
+        </section>
     </main>
     <footer>
         <div class="footer-container">
             <p>&copy; 2025 MP Tech Solutions. Todos os direitos reservados.</p>
             <nav class="footer-menu" aria-label="Links rápidos">
-                <a href="servicos.html" style="color:#00e6e6;font-weight:bold;text-decoration:underline;">Serviços</a> |
-                <a href="contato.html" style="color:#00e6e6;font-weight:bold;text-decoration:underline;">Contato</a>
+                <a href="servicos.html">Serviços</a> |
+                <a href="contato.html">Contato</a>
             </nav>
             <p>Desenvolvido por <a href="https://www.linkedin.com/in/matheus-de-almeida-silva-721907242/" style="color:#a366e6;font-weight:bold;">Matheus Pudolsk</a></p>
         </div>

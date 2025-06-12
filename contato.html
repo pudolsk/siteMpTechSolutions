@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Contato | MP Tech Solutions</title>
+    <meta name="description" content="Entre em contato com a MP Tech Solutions para tirar dúvidas, solicitar orçamento ou agendar uma visita técnica. Atendimento rápido e personalizado em Uberlândia e região." />
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" type="image/jpeg" href="imagens/logo/logomp.jpg" />
@@ -27,33 +28,37 @@
             <img src="imagens/logo/logomp.jpg" alt="Logo da MP Tech Solutions" class="logo" />
             <div class="header-texto">
                 <h1>MP Tech Solutions</h1>
+                <p class="subtitulo">Soluções rápidas e seguras em TI, CFTV e manutenção</p>
             </div>
         </div>
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
-        <nav class="menu-central" id="menuCentral">
-            <a href="index.html" style="color:#00e6e6;font-weight:bold;">Início</a>
-            <a href="servicos.html" style="color:#00e6e6;font-weight:bold;">Serviços</a>
-            <a href="diferenciais.html" style="color:#00e6e6;font-weight:bold;">Diferenciais</a>
-            <a href="depoimentos.html" style="color:#00e6e6;font-weight:bold;">Depoimentos</a>
-            <a href="faq.html" style="color:#00e6e6;font-weight:bold;">FAQ</a>
-            <a href="contato.html" style="color:#00e6e6;font-weight:bold;">Contato</a>
+        <nav class="menu-central" id="menuCentral" aria-label="Menu principal">
+            <a href="index.html" aria-label="Ir para a página inicial">Início</a>
+            <a href="servicos.html" aria-label="Ver serviços">Serviços</a>
+            <a href="diferenciais.html" aria-label="Ver diferenciais">Diferenciais</a>
+            <a href="depoimentos.html" aria-label="Ver depoimentos">Depoimentos</a>
+            <a href="faq.html" aria-label="Ver perguntas frequentes">FAQ</a>
+            <a href="contato.html" aria-label="Ir para a página de contato">Contato</a>
         </nav>
     </header>
     <main>
-        <section class="centralizado contato-links">
-            <h2>Fale Conosco</h2>
-            <p><i class="fas fa-phone"></i> WhatsApp: <a href="https://wa.me/5534997227301" target="_blank">+55 (34) 99722-7301</a></p>
-            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:MatheusPudolskTechSolutions@gmail.com">MatheusPudolskTechSolutions@gmail.com</a></p>
-            <p><i class="fab fa-instagram"></i> Instagram: <a href="https://instagram.com/MPTechSolutions" target="_blank">@MPTechSolutions</a></p>
-            <p><i class="fas fa-map-marker-alt"></i> Uberlândia-MG</p>
+        <section class="centralizado contato-links" style="max-width:420px; margin:0 auto;">
+            <h2 class="titulo-diferenciais">Fale Conosco</h2>
+            <ul class="contato-lista">
+                <li><i class="fas fa-phone" style="color:#25D366;"></i> WhatsApp: <a href="https://wa.me/5534997227301" target="_blank">+55 (34) 99722-7301</a></li>
+                <li><i class="fas fa-envelope" style="color:#1e7fc6;"></i> Email: <a href="mailto:MatheusPudolskTechSolutions@gmail.com">MatheusPudolskTechSolutions@gmail.com</a></li>
+                <li><i class="fab fa-instagram" style="color:#e60073;"></i> Instagram: <a href="https://instagram.com/MPTechSolutions" target="_blank">@MPTechSolutions</a></li>
+                <li><i class="fas fa-map-marker-alt" style="color:#4ecb8f;"></i> Uberlândia-MG</li>
+            </ul>
+            <p class="descricao">Entre em contato para tirar dúvidas, solicitar orçamento ou agendar uma visita técnica.<br>Atendimento rápido e personalizado!</p>
         </section>
     </main>
     <footer>
         <div class="footer-container">
             <p>&copy; 2025 MP Tech Solutions. Todos os direitos reservados.</p>
             <nav class="footer-menu" aria-label="Links rápidos">
-                <a href="servicos.html" style="color:#00e6e6;font-weight:bold;">Serviços</a> |
-                <a href="contato.html" style="color:#00e6e6;font-weight:bold;">Contato</a>
+                <a href="servicos.html">Serviços</a> |
+                <a href="contato.html">Contato</a>
             </nav>
             <p>Desenvolvido por <a href="https://www.linkedin.com/in/matheus-de-almeida-silva-721907242/" style="color:#a366e6;font-weight:bold;">Matheus Pudolsk</a></p>
         </div>
@@ -79,6 +84,7 @@
                     <option value="Configuração de servidores e backups">Configuração de servidores e backups</option>
                     <option value="Manutenção de impressoras">Manutenção de impressoras</option>
                     <option value="Consultoria em TI">Consultoria em TI</option>
+                    <option value="Criação de sites personalizados">Criação de sites personalizados</option>
                 </select>
                 <label for="detalhes">Informações adicionais:</label>
                 <textarea id="detalhes" rows="4" required></textarea>

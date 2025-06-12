@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Serviços | MP Tech Solutions</title>
+    <meta name="description" content="Conheça os serviços da MP Tech Solutions: manutenção de computadores, CFTV, redes, consultoria, suporte técnico, criação de sites e muito mais em Uberlândia e região." />
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" type="image/jpeg" href="imagens/logo/logomp.jpg" />
@@ -14,37 +15,62 @@
             <img src="imagens/logo/logomp.jpg" alt="Logo da MP Tech Solutions" class="logo" />
             <div class="header-texto">
                 <h1>MP Tech Solutions</h1>
+                <p class="subtitulo">Soluções rápidas e seguras em TI, CFTV e manutenção</p>
             </div>
         </div>
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
-        <nav class="menu-central" id="menuCentral">
-            <a href="index.html" style="color:#00e6e6;font-weight:bold;">Início</a>
-            <a href="servicos.html" style="color:#00e6e6;font-weight:bold;">Serviços</a>
-            <a href="diferenciais.html" style="color:#00e6e6;font-weight:bold;">Diferenciais</a>
-            <a href="depoimentos.html" style="color:#00e6e6;font-weight:bold;">Depoimentos</a>
-            <a href="faq.html" style="color:#00e6e6;font-weight:bold;">FAQ</a>
-            <a href="contato.html" style="color:#00e6e6;font-weight:bold;">Contato</a>
+        <nav class="menu-central" id="menuCentral" aria-label="Menu principal">
+            <a href="index.html" aria-label="Ir para a página inicial">Início</a>
+            <a href="servicos.html" aria-label="Ver serviços">Serviços</a>
+            <a href="diferenciais.html" aria-label="Ver diferenciais">Diferenciais</a>
+            <a href="depoimentos.html" aria-label="Ver depoimentos">Depoimentos</a>
+            <a href="faq.html" aria-label="Ver perguntas frequentes">FAQ</a>
+            <a href="contato.html" aria-label="Ir para a página de contato">Contato</a>
         </nav>
     </header>
     <main>
-        <section class="centralizado">
-            <h2>Serviços</h2>
+        <section class="centralizado" style="max-width:900px; margin:0 auto;">
+            <h2 class="titulo-servicos">Nossos Serviços</h2>
+            <p class="descricao">Atuamos com manutenção de computadores, instalação de CFTV, redes, consultoria, suporte técnico, criação de sites personalizados e muito mais. Nosso objetivo é garantir tranquilidade e segurança para você e seu negócio.</p>
             <div class="servicos-grid">
-                <button class="servico-item servico-btn" data-servico="computador"><span class="servico-icone">💻</span><span>Manutenção de computadores e notebooks</span></button>
-                <button class="servico-item servico-btn" data-servico="cftv"><span class="servico-icone">📹</span><span>Instalação e manutenção de câmeras CFTV</span></button>
-                <button class="servico-item servico-btn" data-servico="redes"><span class="servico-icone">🌐</span><span>Infraestrutura de redes e cabeamento</span></button>
-                <button class="servico-item servico-btn" data-servico="suporte"><span class="servico-icone">🛠️</span><span>Suporte técnico para empresas</span></button>
-                <button class="servico-item servico-btn" data-servico="acesso"><span class="servico-icone">🔒</span><span>Controle de acesso</span></button>
-                <button class="servico-item servico-btn" data-servico="impressora"><span class="servico-icone">🖨️</span><span>Manutenção de impressoras</span></button>
-                <button class="servico-item servico-btn" data-servico="servidor"><span class="servico-icone">📦</span><span>Backup e configuração de servidores</span></button>
-                <button class="servico-item servico-btn" data-servico="consultoria"><span class="servico-icone">💼</span><span>Consultoria em TI</span></button>
+                <div class="servico-item" data-servico="computador">
+                    <span class="servico-icone" style="color:#25D366;">💻</span>
+                    <span class="servico-nome">Manutenção de computadores e notebooks</span>
+                </div>
+                <div class="servico-item" data-servico="cftv">
+                    <span class="servico-icone" style="color:#1e7fc6;">📹</span>
+                    <span class="servico-nome">Instalação e manutenção de câmeras CFTV</span>
+                </div>
+                <div class="servico-item" data-servico="redes">
+                    <span class="servico-icone" style="color:#e60073;">🌐</span>
+                    <span class="servico-nome">Infraestrutura de redes e cabeamento</span>
+                </div>
+                <div class="servico-item" data-servico="suporte">
+                    <span class="servico-icone" style="color:#4ecb8f;">🛠️</span>
+                    <span class="servico-nome">Suporte técnico para empresas</span>
+                </div>
+                <div class="servico-item" data-servico="acesso">
+                    <span class="servico-icone" style="color:#00e6e6;">🔒</span>
+                    <span class="servico-nome">Controle de acesso</span>
+                </div>
+                <div class="servico-item" data-servico="impressora">
+                    <span class="servico-icone" style="color:#a366e6;">🖨️</span>
+                    <span class="servico-nome">Manutenção de impressoras</span>
+                </div>
+                <div class="servico-item" data-servico="servidor">
+                    <span class="servico-icone" style="color:#f9d923;">📦</span>
+                    <span class="servico-nome">Backup e configuração de servidores</span>
+                </div>
+                <div class="servico-item" data-servico="consultoria">
+                    <span class="servico-icone" style="color:#1e7fc6;">💼</span>
+                    <span class="servico-nome">Consultoria em TI</span>
+                </div>
+                <div class="servico-item" data-servico="sites">
+                    <span class="servico-icone" style="color:#ff9800;">🌟</span>
+                    <span class="servico-nome">Criação de sites personalizados</span>
+                </div>
             </div>
-            <div style="margin-top:32px;text-align:center;">
-                <p style="font-size:1.08em;max-width:520px;margin:0 auto 18px auto;">
-                    <b>Atendimento rápido, consultoria personalizada e soluções modernas para sua empresa ou residência.</b><br>
-                    Fale conosco e descubra como a tecnologia pode facilitar o seu dia a dia!
-                </p>
-            </div>
+            <p class="descricao" style="font-size:1.08em; color:#e0ffe0; margin-top:18px;"><b>Atendimento rápido, consultoria personalizada e soluções modernas para sua empresa ou residência.</b><br>Fale conosco e descubra como a tecnologia pode facilitar o seu dia a dia!</p>
         </section>
         <!-- Modal explicação serviço -->
         <div id="modalServico" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalServicoTitle" style="display:none;">
@@ -52,7 +78,7 @@
                 <span class="close" tabindex="0" aria-label="Fechar">&times;</span>
                 <h2 id="modalServicoTitle">Serviço</h2>
                 <p id="modalServicoTexto"></p>
-                <a id="btnServicoWhats" href="#" target="_blank" class="cta-link" style="display:inline-block;margin-top:18px;width:100%;text-align:center;">Solicitar orçamento via WhatsApp</a>
+                <a id="btnServicoWhats" href="#" target="_blank" class="cta-link">Solicitar orçamento via WhatsApp</a>
             </div>
         </div>
     </main>
@@ -60,8 +86,8 @@
         <div class="footer-container">
             <p>&copy; 2025 MP Tech Solutions. Todos os direitos reservados.</p>
             <nav class="footer-menu" aria-label="Links rápidos">
-                <a href="servicos.html" style="color:#00e6e6;font-weight:bold;">Serviços</a> |
-                <a href="contato.html" style="color:#00e6e6;font-weight:bold;">Contato</a>
+                <a href="servicos.html">Serviços</a> |
+                <a href="contato.html">Contato</a>
             </nav>
             <p>Desenvolvido por <a href="https://www.linkedin.com/in/matheus-de-almeida-silva-721907242/" style="color:#a366e6;font-weight:bold;">Matheus Pudolsk</a></p>
         </div>
@@ -87,6 +113,7 @@
                     <option value="Configuração de servidores e backups">Configuração de servidores e backups</option>
                     <option value="Manutenção de impressoras">Manutenção de impressoras</option>
                     <option value="Consultoria em TI">Consultoria em TI</option>
+                    <option value="Criação de sites personalizados">Criação de sites personalizados</option>
                 </select>
                 <label for="detalhes">Informações adicionais:</label>
                 <textarea id="detalhes" rows="4" required></textarea>

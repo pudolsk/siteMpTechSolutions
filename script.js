@@ -1,48 +1,3 @@
-// Elementos
-const btnOrcamento = document.getElementById("btnOrcamento");
-const modal = document.getElementById("formModal");
-const closeBtn = document.querySelector(".close");
-const form = document.getElementById("orcamentoForm");
-
-// Abrir o modal
-btnOrcamento.addEventListener("click", () => {
-    modal.style.display = "flex";
-});
-
-// Fechar o modal ao clicar no X
-closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-});
-
-// Fechar o modal ao clicar fora
-window.addEventListener("click", (e) => {
-    if (modal && e.target === modal) {
-        modal.style.display = "none";
-    }
-});
-
-// Enviar formulário via WhatsApp
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const nome = document.getElementById("nome").value.trim();
-    const contato = document.getElementById("contato").value.trim();
-    const servico = document.getElementById("servico").value.trim();
-    const detalhes = document.getElementById("detalhes").value.trim();
-
-    if (!nome || !contato || !servico || !detalhes) {
-        alert("Por favor, preencha todos os campos.");
-        return;
-    }
-
-    let mensagem = `Olá, meu nome é ${nome}.\nQuero solicitar orçamento para: ${servico}.\nContato: ${contato}\nDetalhes: ${detalhes}`;
-    const url = `https://wa.me/5534997227301?text=${encodeURIComponent(mensagem)}`;
-
-    window.open(url, "_blank");
-    modal.style.display = "none";
-    form.reset();
-});
-
 // Corrige escopo duplicado para variáveis globais
 // Unifica e otimiza o controle de modais e botões
 window.addEventListener('DOMContentLoaded', function() {
@@ -92,7 +47,7 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Modal explicação de serviço (servicos.html)
+    // Modal explicação de serviço (funciona em todas as páginas)
     var modalServico = document.getElementById('modalServico');
     var closeServico = modalServico ? modalServico.querySelector('.close') : null;
     var btnServicoWhats = document.getElementById('btnServicoWhats');
@@ -130,20 +85,39 @@ window.addEventListener('DOMContentLoaded', function() {
         consultoria: {
             titulo: 'Consultoria em TI',
             texto: 'Avaliação, planejamento e implementação de soluções tecnológicas sob medida para o seu negócio.'
+        },
+        sites: {
+            titulo: 'Criação de sites personalizados',
+            texto: 'Desenvolvimento de sites institucionais, landing pages e portfólios modernos, responsivos e otimizados para o seu negócio ou projeto.'
         }
     };
-    var servicoBtns = document.querySelectorAll('.servico-btn[data-servico]');
-    servicoBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            var tipo = btn.getAttribute('data-servico');
-            if (servicoExplicacoes[tipo]) {
+    // Adiciona evento de clique para todos os cards de serviço (home e serviços)
+    var servicoCards = document.querySelectorAll('.servico-item[data-servico]');
+    servicoCards.forEach(function(card) {
+        card.addEventListener('click', function(e) {
+            // Evita abrir o modal ao clicar em links internos (se houver)
+            if (e.target.tagName === 'A') return;
+            var tipo = card.getAttribute('data-servico');
+            if (servicoExplicacoes[tipo] && modalServico && modalServicoTitle && modalServicoTexto && btnServicoWhats) {
                 modalServicoTitle.textContent = servicoExplicacoes[tipo].titulo;
                 modalServicoTexto.textContent = servicoExplicacoes[tipo].texto;
-                btnServicoWhats.href = `https://wa.me/5534997227301?text=Olá! Gostaria de solicitar orçamento para ${servicoExplicacoes[tipo].titulo}.`;
-                btnServicoWhats.style.display = 'inline-block';
+                btnServicoWhats.href = 'https://wa.me/5534997227301?text=' + encodeURIComponent('Olá! Gostaria de solicitar orçamento para ' + servicoExplicacoes[tipo].titulo + '.');
                 modalServico.style.display = 'flex';
+                // Foco acessível
+                modalServico.querySelector('.close').focus();
+            }
+            e.preventDefault();
+            e.stopPropagation();
+        });
+        // Acessibilidade: abrir modal com Enter/Space
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                card.click();
             }
         });
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', card.innerText);
     });
     if (closeServico && modalServico) {
         closeServico.addEventListener('click', function() {
@@ -170,4 +144,60 @@ window.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Exibe descrição do serviço ao passar mouse (desktop)
+    var servicoItems = document.querySelectorAll('.servico-item');
+    servicoItems.forEach(function(item) {
+        item.addEventListener('click', function(e) {
+            var nomeServico = item.querySelector('.servico-nome')?.textContent?.trim();
+            var select = document.getElementById('servico');
+            // Desktop: só abre modal se clicar no botão de orçamento
+            if (window.innerWidth > 900) {
+                var botaoOrcamento = e.target.closest('.servico-whats');
+                if (botaoOrcamento && nomeServico && select) {
+                    for (var i = 0; i < select.options.length; i++) {
+                        if (select.options[i].text.trim() === nomeServico) {
+                            select.selectedIndex = i;
+                            break;
+                        }
+                    }
+                    var modal = document.getElementById('formModal');
+                    if (modal) modal.style.display = 'flex';
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                return;
+            }
+            // Mobile/tablet: ao clicar no card, abre o modal de orçamento
+            if (nomeServico && select) {
+                for (var i = 0; i < select.options.length; i++) {
+                    if (select.options[i].text.trim() === nomeServico) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+                var modal = document.getElementById('formModal');
+                if (modal) modal.style.display = 'flex';
+                e.stopPropagation();
+            }
+        });
+    });
+    // Fecha todos tooltips ao clicar fora (mobile)
+    document.body.addEventListener('click', function(e) {
+        if (window.innerWidth <= 900) {
+            servicoItems.forEach(function(item) {
+                // Não fecha se clicar no link do WhatsApp
+                if (e.target.classList && e.target.classList.contains('servico-whats')) return;
+                item.classList.remove('mostrar-desc');
+            });
+        }
+    });
+    // Acessibilidade: permite fechar com ESC
+    servicoItems.forEach(function(item) {
+        item.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                item.classList.remove('mostrar-desc');
+            }
+        });
+    });
 });

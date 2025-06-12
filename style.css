@@ -1,14 +1,15 @@
-/* Base */
+/* ===== BASE ===== */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(120deg, #1e2a38 60%, #25D366 100%);
-    color: #ffffff;
+    background: url('imagens/fundo/fundo.jpg') no-repeat center center fixed, linear-gradient(120deg, #1e2a38 60%, #4ecb8f 100%);
+    background-size: cover, 100% 100%;
+    color: #fff;
     min-height: 100vh;
 }
 
-/* Header com efeito de sombra e destaque */
+/* ===== HEADER ===== */
 header {
     background-image: url('imagens/fundo/titulo.jpg');
     background-size: cover;
@@ -18,21 +19,18 @@ header {
     text-align: center;
     box-shadow: 0 4px 24px rgba(0,0,0,0.18);
 }
-
 header::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* sobreposição escura */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 0;
 }
-
 header > * {
     position: relative;
     z-index: 1;
 }
 
-/* Container flexível */
 .header-container {
     display: flex;
     flex-wrap: wrap;
@@ -41,28 +39,24 @@ header > * {
     gap: 36px;
     margin-bottom: 24px;
 }
-
 .logo {
     max-width: 220px;
     height: auto;
     border-radius: 16px;
     box-shadow: 0 2px 12px rgba(37,211,102,0.10);
-    border: 2px solid #25D366;
+    border: 2px solid #1e7fc6;
 }
-
 .header-texto {
     max-width: 650px;
     text-align: left;
 }
-
 .header-texto h1 {
     font-size: 3em;
     margin: 0;
-    color: #25D366;
+    color: #1e7fc6;
     letter-spacing: 1px;
     text-shadow: 1px 1px 8px #000;
 }
-
 .header-texto p {
     font-size: 1.25em;
     margin-top: 12px;
@@ -70,26 +64,30 @@ header > * {
     text-shadow: 1px 1px 6px #000;
 }
 
-/* Navegação */
-nav.menu {
+/* ===== NAVEGAÇÃO ===== */
+nav.menu, .footer-menu {
     text-align: center;
-    margin-top: 10px;
 }
-
-nav.menu a {
-    color: #ffffff;
-    margin: 0 20px;
+nav.menu a, .footer-menu a {
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
+    margin: 0 20px;
+    transition: color 0.2s;
 }
-
-nav.menu a:hover {
-    text-decoration: underline;
+nav.menu a:hover, nav.menu a:focus, .footer-menu a:hover, .footer-menu a:focus {
     color: #00e6e6;
+    text-decoration: underline;
+    outline: 2px solid #00e6e6;
+    outline-offset: 2px;
+}
+.footer-menu a {
+    color: #00e6e6;
+    font-weight: 500;
+    margin: 0 5px;
 }
 
-/* Menu Central */
 .menu-central {
     display: flex;
     justify-content: center;
@@ -101,7 +99,6 @@ nav.menu a:hover {
     position: relative;
     z-index: 100;
 }
-
 .menu-central a {
     color: #fff;
     font-weight: bold;
@@ -111,12 +108,10 @@ nav.menu a:hover {
     border-radius: 6px;
     transition: background 0.2s, color 0.2s;
 }
-
 .menu-central a:hover, .menu-central a.active {
     background: #25D366;
     color: #192734;
 }
-
 .menu-toggle {
     display: none;
     background: none;
@@ -130,50 +125,11 @@ nav.menu a:hover {
     cursor: pointer;
 }
 
-@media (max-width: 900px) {
-    .menu-central {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        padding: 0;
-        margin-bottom: 18px;
-        background: #22304a;
-        border-radius: 0 0 12px 12px;
-        position: relative;
-    }
-    .menu-central a {
-        width: 100%;
-        padding: 16px 24px;
-        border-radius: 0;
-        border-bottom: 1px solid #1e2a38;
-        font-size: 1.08em;
-        text-align: left;
-    }
-    .menu-central {
-        display: none;
-        flex-direction: column;
-        width: 100vw;
-        left: 0;
-        top: 60px;
-        position: absolute;
-        background: #22304a;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-    }
-    .menu-central.open {
-        display: flex;
-    }
-    .menu-toggle {
-        display: block;
-    }
-}
-
-/* Seções */
+/* ===== SEÇÕES ===== */
 section {
     padding: 30px 20px;
-    background-color: #243447; /* levemente mais claro que o fundo */
+    background-color: #243447;
 }
-
-/* Centralizado */
 .centralizado {
     max-width: 700px;
     margin: 0 auto;
@@ -181,7 +137,7 @@ section {
     text-align: center;
 }
 
-/* Rodapé */
+/* ===== RODAPÉ ===== */
 footer {
     background-color: #192734;
     color: #ccc;
@@ -189,19 +145,19 @@ footer {
     padding: 15px;
 }
 
-/* Ícones de contato */
+/* ===== ÍCONES DE CONTATO ===== */
 #contato i {
     margin-right: 8px;
     color: #00aced;
 }
 
-/* Botão flutuante WhatsApp com animação */
+/* ===== BOTÃO FLUTUANTE ===== */
 #btnOrcamento {
     position: fixed;
     bottom: 24px;
     right: 24px;
-    background: linear-gradient(90deg, #25D366 60%, #1e2a38 100%);
-    color: white;
+    background: linear-gradient(90deg, #25D366 60%, #1e7fc6 100%);
+    color: #fff;
     border: none;
     padding: 14px 20px;
     border-radius: 50px;
@@ -211,20 +167,21 @@ footer {
     z-index: 1000;
     transition: background 0.2s, transform 0.2s;
     animation: pulseBtn 1.8s infinite;
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
-
 @keyframes pulseBtn {
     0% { box-shadow: 0 0 0 0 #25D36655; }
     70% { box-shadow: 0 0 0 12px #25D36611; }
     100% { box-shadow: 0 0 0 0 #25D36655; }
 }
-
 #btnOrcamento:hover {
-    background: #1ebc5d;
+    background: linear-gradient(90deg, #1e7fc6 60%, #25D366 100%);
+    color: #fff;
     transform: scale(1.09);
 }
 
-/* Modal */
+/* ===== MODAL ===== */
 .modal {
     display: none;
     position: fixed;
@@ -240,12 +197,10 @@ footer {
     box-sizing: border-box;
     animation: fadeInModal 0.25s;
 }
-
 @keyframes fadeInModal {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-
 .modal-content {
     background: linear-gradient(135deg, #f8f8f8 80%, #25D366 100%);
     color: #222;
@@ -260,25 +215,21 @@ footer {
     text-align: center;
     animation: popInModal 0.25s;
 }
-
 @keyframes popInModal {
     from { transform: scale(0.95); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
-
 .modal-content h2 {
-    color: #25D366;
+    color: #4ecb8f;
     margin-bottom: 16px;
     font-size: 1.4em;
 }
-
 .modal-content label {
     display: block;
     margin: 12px 0 4px 0;
     font-weight: 600;
     color: #222;
 }
-
 .modal-content input,
 .modal-content textarea,
 .modal-content select {
@@ -291,14 +242,12 @@ footer {
     box-sizing: border-box;
     background: #f4f4f4;
 }
-
 .modal-content textarea {
     resize: vertical;
     min-height: 80px;
 }
-
 .modal-content button, .modal-content .cta-link {
-    background: #25D366;
+    background: #4ecb8f;
     color: #fff;
     border: none;
     padding: 13px 0;
@@ -313,17 +262,15 @@ footer {
     text-decoration: none;
     display: inline-block;
 }
-
 .modal-content button:hover, .modal-content .cta-link:hover {
-    background: #1ebc5d;
+    background: #3bbd7a;
     color: #192734;
 }
-
 .close {
     float: right;
     font-size: 24px;
     cursor: pointer;
-    color: #25D366;
+    color: #4ecb8f;
     margin-top: -10px;
     margin-right: -5px;
     font-weight: bold;
@@ -331,22 +278,152 @@ footer {
     border: none;
     transition: color 0.2s;
 }
-
 .close:hover {
-    color: #1ebc5d;
+    color: #3bbd7a;
 }
 
-@media (max-width: 600px) {
-    .modal-content {
-        padding: 18px 6px 18px 6px;
-        max-width: 99vw;
+/* ===== FEEDBACK FORMULÁRIO ===== */
+#formFeedback {
+    color: #4ecb8f;
+    text-align: center;
+    margin-bottom: 10px;
+    display: none;
+}
+
+/* ===== CARDS DE SERVIÇO ===== */
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+    margin: 28px 0 0 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+.servico-item {
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+    background: linear-gradient(120deg, #22304a 80%, #25D366 100%);
+    border-radius: 14px;
+    padding: 28px 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 1.13em;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    border: none;
+    position: relative;
+    cursor: pointer;
+}
+/* Tooltip só aparece no hover em telas grandes */
+@media (min-width: 901px) {
+    .servico-desc {
+        display: none;
+        pointer-events: auto;
     }
-    .logo {
-        max-width: 80px;
+    .servico-item:hover .servico-desc,
+    .servico-item:focus-within .servico-desc,
+    .servico-item .servico-desc:hover,
+    .servico-item .servico-desc:focus-within {
+        display: block;
+        pointer-events: auto;
+        opacity: 1;
+    }
+}
+/* Em telas pequenas, tooltip nunca aparece (apenas modal) */
+@media (max-width: 900px) {
+    .servico-desc {
+        display: none !important;
+    }
+}
+.servico-item:active {
+    outline: 2px solid #25D366;
+}
+.servico-item:hover {
+    background: #25D366;
+    color: #192734;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 6px 24px rgba(37,211,102,0.18);
+}
+.servico-item.mostrar-desc,
+.servico-item:hover,
+.servico-item:focus-within {
+    z-index: 10000;
+}
+.servico-desc {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    background: #22304a;
+    color: #fff;
+    padding: 16px 18px 24px 18px;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.30);
+    font-size: 1em;
+    min-width: 240px;
+    z-index: 20000;
+    margin-top: 10px;
+    text-align: left;
+    transition: opacity 0.2s;
+    pointer-events: auto;
+    overflow: visible;
+    white-space: normal;
+    word-break: break-word;
+}
+.servico-desc .servico-whats {
+    display: block;
+    margin-top: 12px;
+    background: linear-gradient(90deg,#25D366 60%,#1e7fc6 100%);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 18px;
+    text-decoration: none;
+    font-size: 1em;
+    box-shadow: 0 2px 12px rgba(37,211,102,0.10);
+    transition: background 0.2s;
+    text-align: center;
+    pointer-events: auto;
+}
+.servico-desc .servico-whats:hover {
+    background: linear-gradient(90deg,#1e7fc6 60%,#25D366 100%);
+    color: #fff;
+}
+.servico-item:hover .servico-desc,
+.servico-item:focus-within .servico-desc,
+.servico-item.mostrar-desc .servico-desc,
+.servico-item:active .servico-desc {
+    display: block;
+    pointer-events: auto;
+    opacity: 1;
+}
+.servico-desc {
+    pointer-events: auto;
+}
+/* Permite clicar dentro do tooltip sem fechar ao sair do hover */
+.servico-item .servico-desc:hover,
+.servico-item .servico-desc:focus-within {
+    display: block;
+    pointer-events: auto;
+    opacity: 1;
+}
+@media (max-width: 700px) {
+    .servico-desc {
+        left: 0;
+        right: 0;
+        transform: none;
+        min-width: unset;
+        width: 100%;
+        font-size: 0.98em;
     }
 }
 
-/* Diferenciais */
+/* ===== DIFERENCIAIS ===== */
 .diferenciais-lista {
     display: flex;
     flex-wrap: wrap;
@@ -367,40 +444,14 @@ footer {
     display: flex;
     align-items: center;
     gap: 12px;
+    border: none;
 }
 .diferenciais-lista i {
     color: #00e6e6;
     font-size: 1.5em;
 }
 
-/* CTA */
-.cta-section {
-    background: linear-gradient(90deg, #25D366 0%, #1e2a38 100%);
-    color: #fff;
-    text-align: center;
-    padding: 40px 20px 30px 20px;
-    margin: 40px 0 0 0;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-}
-.cta-link {
-    color: #fff;
-    font-weight: bold;
-    text-decoration: underline;
-    transition: color 0.2s;
-}
-.cta-link:hover {
-    color: #192734;
-}
-
-/* Depoimentos */
-#depoimentos {
-    background: #243447;
-    border-radius: 12px;
-    margin: 40px 0 0 0;
-    padding: 30px 20px;
-    text-align: center;
-}
+/* ===== DEPOIMENTOS ===== */
 .depoimento {
     background: #1e2a38;
     color: #fff;
@@ -419,7 +470,7 @@ footer {
     font-style: normal;
 }
 
-/* FAQ */
+/* ===== FAQ ===== */
 #faq {
     margin: 40px 0 0 0;
     padding: 30px 20px;
@@ -449,67 +500,7 @@ footer {
     font-size: 0.98em;
 }
 
-/* Grid de Serviços */
-.servicos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 22px;
-    margin: 28px 0 0 0;
-    padding: 0;
-}
-.servico-item {
-    background: linear-gradient(120deg, #22304a 80%, #25D366 100%);
-    border-radius: 14px;
-    padding: 28px 20px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    font-size: 1.13em;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-    transition: background 0.2s, color 0.2s, transform 0.2s;
-}
-.servico-item:hover {
-    background: #25D366;
-    color: #192734;
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 6px 24px rgba(37,211,102,0.18);
-}
-.servico-icone {
-    font-size: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.servico-btn {
-    text-decoration: none;
-    color: #fff;
-    transition: background 0.2s, color 0.2s, transform 0.2s;
-}
-.servico-btn:hover {
-    background: #25D366;
-    color: #192734;
-    transform: translateY(-3px) scale(1.04);
-    box-shadow: 0 4px 16px rgba(37,211,102,0.15);
-}
-
-/* Responsividade */
-@media (max-width: 800px) {
-    .header-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .header-texto h1 {
-        font-size: 2em;
-    }
-    section {
-        padding: 20px 5px;
-    }
-    .modal-content {
-        max-width: 95vw;
-    }
-}
-
+/* ===== MEDIA QUERIES ===== */
 @media (max-width: 900px) {
     .header-container {
         flex-direction: column;
@@ -529,8 +520,51 @@ footer {
     .modal-content {
         max-width: 98vw;
     }
+    .menu-central {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 0;
+        margin-bottom: 18px;
+        background: #22304a;
+        border-radius: 0 0 12px 12px;
+        position: relative;
+        display: none;
+        width: 100vw;
+        left: 0;
+        top: 60px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    }
+    .menu-central.open {
+        display: flex;
+    }
+    .menu-central a {
+        width: 100%;
+        padding: 16px 24px;
+        border-radius: 0;
+        border-bottom: 1px solid #1e2a38;
+        font-size: 1.08em;
+        text-align: left;
+    }
+    .menu-toggle {
+        display: block;
+    }
 }
-
+@media (max-width: 800px) {
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .header-texto h1 {
+        font-size: 2em;
+    }
+    section {
+        padding: 20px 5px;
+    }
+    .modal-content {
+        max-width: 95vw;
+    }
+}
 @media (max-width: 700px) {
     .header-container {
         flex-direction: column;
@@ -552,14 +586,63 @@ footer {
         padding: 10px 4px;
         font-size: 0.95em;
     }
-    .btn-flutuante {
+    .btn-flutuante, #btnOrcamento {
         right: 10px;
         bottom: 10px;
         padding: 10px 12px;
         font-size: 15px;
     }
+    .servico-desc {
+        left: 0;
+        right: 0;
+        transform: none;
+        min-width: unset;
+        width: 100%;
+        font-size: 0.98em;
+    }
 }
-
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 12px 4px 12px 4px;
+        max-width: 99vw;
+        font-size: 0.98em;
+    }
+    .servicos-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin: 12px 0 0 0;
+    }
+    .servico-item {
+        padding: 18px 10px;
+        font-size: 1em;
+        min-width: unset;
+    }
+    .servico-icone {
+        font-size: 1.4em;
+    }
+    .titulo-servicos, .titulo-diferenciais {
+        font-size: 1.2em;
+    }
+    .descricao, .bem-vindo {
+        font-size: 1em;
+    }
+    .institucional-info p {
+        font-size: 0.98em;
+    }
+    .cta-link, .btn-flutuante, #btnOrcamento {
+        font-size: 1em;
+        padding: 10px 16px;
+    }
+    .diferencial-card {
+        min-width: 140px;
+        font-size: 0.98em;
+        padding: 12px 10px;
+    }
+    .footer-container {
+        font-size: 0.93em;
+        padding: 8px 2px;
+    }
+}
 @media (max-width: 500px) {
     nav.menu a {
         display: block;
@@ -575,7 +658,6 @@ footer {
         font-size: 14px;
     }
 }
-
 @media (max-width: 430px) {
     .menu-central {
         flex-direction: column;
@@ -588,32 +670,144 @@ footer {
     }
 }
 
-/* Efeitos de hover e foco */
-nav.menu a:focus, nav.menu a:hover {
-    outline: 2px solid #00e6e6;
-    outline-offset: 2px;
-}
-
-.footer-menu a {
-    color: #00e6e6;
+/* ===== ESTILIZAÇÃO ADICIONAL ===== */
+.cta-link {
+    display: inline-block;
+    background: linear-gradient(90deg,#25D366 60%,#1e7fc6 100%);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 14px 32px;
+    margin-top: 10px;
     text-decoration: none;
-    margin: 0 5px;
-    font-weight: 500;
+    font-size: 1.13em;
+    box-shadow: 0 2px 12px rgba(37,211,102,0.10);
+    transition: background 0.2s;
 }
-.footer-menu a:hover, .footer-menu a:focus {
-    text-decoration: underline;
+.cta-link:hover {
+    background: linear-gradient(90deg,#1e7fc6 60%,#25D366 100%);
     color: #fff;
 }
 
-/* Contraste para textos sobre imagens */
-.header-texto h1, .header-texto p {
-    text-shadow: 1px 1px 6px #000;
+.bloco-institucional {
+    background: #22304a;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    max-width: 800px;
+    margin: 32px auto 32px auto;
+    padding: 36px 24px 28px 24px;
+    text-align: center;
+}
+.logo-institucional {
+    display: block;
+    margin: 0 auto 18px auto;
+    border: 2px solid #4ecb8f;
+    box-shadow: 0 0 0 3px #1e7fc6;
+    background: #192734;
+    max-width: 120px;
+}
+.titulo-principal {
+    color: #fff;
+    font-size: 2.3em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 8px #000;
+}
+.bem-vindo {
+    font-size: 1.18em;
+    color: #e0ffe0;
+    margin-bottom: 18px;
+}
+.descricao {
+    font-size: 1.08em;
+    color: #e0ffe0;
+    max-width: 520px;
+    margin: 0 auto 18px auto;
+}
+.institucional-info {
+    margin: 0 auto 18px auto;
+    max-width: 520px;
+    text-align: left;
+}
+.titulo-servicos {
+    color: #4ecb8f;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 24px;
+}
+.titulo-diferenciais {
+    color: #1e7fc6;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 24px;
+}
+.cta-final {
+    text-align: center;
+    margin: 32px 0 0 0;
+}
+.diferencial-card {
+    background: #22304a;
+    border-radius: 10px;
+    padding: 22px 28px;
+    min-width: 220px;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
 
-/* Feedback visual após envio do formulário */
-#formFeedback {
-    color: #25D366;
+/* ===== CONTATO ===== */
+.centralizado.contato-links {
+    max-width: 420px;
+    margin: 0 auto;
+    background: #22304a;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    padding: 32px 18px 24px 18px;
     text-align: center;
-    margin-bottom: 10px;
-    display: none;
+}
+.contato-lista {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 18px;
+}
+.contato-lista li {
+    margin-bottom: 12px;
+    font-size: 1.08em;
+    color: #e0ffe0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+.contato-lista i {
+    font-size: 1.2em;
+    min-width: 22px;
+}
+.centralizado.contato-links a {
+    color: #00e6e6 !important;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.2s;
+    word-break: break-all;
+}
+.centralizado.contato-links a:hover, .centralizado.contato-links a:focus {
+    color: #e60073 !important;
+    text-decoration: underline;
+}
+.centralizado.contato-links .descricao {
+    font-size: 1.08em;
+    color: #e0ffe0;
+    margin-top: 10px;
+}
+@media (max-width: 600px) {
+    .centralizado.contato-links {
+        padding: 18px 4px 14px 4px;
+        font-size: 0.98em;
+    }
+    .contato-lista li {
+        font-size: 1em;
+        gap: 4px;
+    }
 }

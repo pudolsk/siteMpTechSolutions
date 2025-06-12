@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Depoimentos | MP Tech Solutions</title>
+    <meta name="description" content="Veja depoimentos de clientes da MP Tech Solutions e saiba por que somos referência em atendimento, agilidade e soluções em TI em Uberlândia e região." />
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" type="image/jpeg" href="imagens/logo/logomp.jpg" />
@@ -14,45 +15,49 @@
             <img src="imagens/logo/logomp.jpg" alt="Logo da MP Tech Solutions" class="logo" />
             <div class="header-texto">
                 <h1>MP Tech Solutions</h1>
+                <p class="subtitulo">Soluções rápidas e seguras em TI, CFTV e manutenção</p>
             </div>
         </div>
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
-        <nav class="menu-central" id="menuCentral">
-            <a href="index.html" style="color:#00e6e6;font-weight:bold;">Início</a>
-            <a href="servicos.html" style="color:#00e6e6;font-weight:bold;">Serviços</a>
-            <a href="diferenciais.html" style="color:#00e6e6;font-weight:bold;">Diferenciais</a>
-            <a href="depoimentos.html" style="color:#00e6e6;font-weight:bold;">Depoimentos</a>
-            <a href="faq.html" style="color:#00e6e6;font-weight:bold;">FAQ</a>
-            <a href="contato.html" style="color:#00e6e6;font-weight:bold;">Contato</a>
+        <nav class="menu-central" id="menuCentral" aria-label="Menu principal">
+            <a href="index.html" aria-label="Ir para a página inicial">Início</a>
+            <a href="servicos.html" aria-label="Ver serviços">Serviços</a>
+            <a href="diferenciais.html" aria-label="Ver diferenciais">Diferenciais</a>
+            <a href="depoimentos.html" aria-label="Ver depoimentos">Depoimentos</a>
+            <a href="faq.html" aria-label="Ver perguntas frequentes">FAQ</a>
+            <a href="contato.html" aria-label="Ir para a página de contato">Contato</a>
         </nav>
     </header>
     <main>
-        <section class="centralizado">
-            <h2>O que dizem nossos clientes</h2>
-            <div class="depoimento">
-                <p><i class="fas fa-quote-left"></i> Atendimento excelente, resolveu meu problema de forma rápida e eficiente! <i class="fas fa-quote-right"></i></p>
-                <span>- Cliente satisfeito</span>
+        <section class="centralizado" style="max-width:600px; margin:0 auto;">
+            <h2 class="titulo-diferenciais">O que dizem nossos clientes</h2>
+            <div class="depoimentos-lista">
+                <article class="depoimento">
+                    <p><i class="fas fa-quote-left" style="color:#25D366;"></i> Atendimento excelente, resolveu meu problema de forma rápida e eficiente! <i class="fas fa-quote-right" style="color:#25D366;"></i></p>
+                    <span>- Cliente satisfeito</span>
+                </article>
+                <article class="depoimento">
+                    <p><i class="fas fa-quote-left" style="color:#1e7fc6;"></i> Recomendo! Profissionalismo e atenção do início ao fim. <i class="fas fa-quote-right" style="color:#1e7fc6;"></i></p>
+                    <span>- Novo cliente</span>
+                </article>
+                <article class="depoimento">
+                    <p><i class="fas fa-quote-left" style="color:#e60073;"></i> Equipe muito ágil, tirou todas as minhas dúvidas e entregou tudo no prazo. <i class="fas fa-quote-right" style="color:#e60073;"></i></p>
+                    <span>- Empresa parceira</span>
+                </article>
+                <article class="depoimento">
+                    <p><i class="fas fa-quote-left" style="color:#4ecb8f;"></i> Soluções modernas e atendimento diferenciado. Voltarei a contratar! <i class="fas fa-quote-right" style="color:#4ecb8f;"></i></p>
+                    <span>- Cliente recorrente</span>
+                </article>
             </div>
-            <div class="depoimento">
-                <p><i class="fas fa-quote-left"></i> Recomendo! Profissionalismo e atenção do início ao fim. <i class="fas fa-quote-right"></i></p>
-                <span>- Novo cliente</span>
-            </div>
-            <div class="depoimento">
-                <p><i class="fas fa-quote-left"></i> Equipe muito ágil, tirou todas as minhas dúvidas e entregou tudo no prazo. <i class="fas fa-quote-right"></i></p>
-                <span>- Empresa parceira</span>
-            </div>
-            <div class="depoimento">
-                <p><i class="fas fa-quote-left"></i> Soluções modernas e atendimento diferenciado. Voltarei a contratar! <i class="fas fa-quote-right"></i></p>
-                <span>- Cliente recorrente</span>
-            </div>
+            <p class="descricao" style="font-size:1.08em; color:#e0ffe0; margin-top:18px;">Sua opinião é muito importante para nós! <b>Envie seu feedback</b> e ajude a MP Tech Solutions a evoluir sempre.</p>
         </section>
     </main>
     <footer>
         <div class="footer-container">
             <p>&copy; 2025 MP Tech Solutions. Todos os direitos reservados.</p>
             <nav class="footer-menu" aria-label="Links rápidos">
-                <a href="servicos.html" style="color:#00e6e6;font-weight:bold;">Serviços</a> |
-                <a href="contato.html" style="color:#00e6e6;font-weight:bold;">Contato</a>
+                <a href="servicos.html">Serviços</a> |
+                <a href="contato.html">Contato</a>
             </nav>
             <p>Desenvolvido por <a href="https://www.linkedin.com/in/matheus-de-almeida-silva-721907242/" style="color:#a366e6;font-weight:bold;">Matheus Pudolsk</a></p>
         </div>
@@ -78,6 +83,7 @@
                     <option value="Configuração de servidores e backups">Configuração de servidores e backups</option>
                     <option value="Manutenção de impressoras">Manutenção de impressoras</option>
                     <option value="Consultoria em TI">Consultoria em TI</option>
+                    <option value="Criação de sites personalizados">Criação de sites personalizados</option>
                 </select>
                 <label for="detalhes">Informações adicionais:</label>
                 <textarea id="detalhes" rows="4" required></textarea>
