@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" type="image/jpeg" href="imagens/logo/logomp.jpg" />
+    <style>
+        /* Melhora contraste dos links na seção de contato */
+        .centralizado.contato-links a {
+            color: #0056b3 !important;
+            font-weight: bold;
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+        .centralizado.contato-links a:hover, .centralizado.contato-links a:focus {
+            color: #e60073 !important;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,7 +40,7 @@
         </nav>
     </header>
     <main>
-        <section class="centralizado">
+        <section class="centralizado contato-links">
             <h2>Fale Conosco</h2>
             <p><i class="fas fa-phone"></i> WhatsApp: <a href="https://wa.me/5534997227301" target="_blank">+55 (34) 99722-7301</a></p>
             <p><i class="fas fa-envelope"></i> Email: <a href="mailto:MatheusPudolskTechSolutions@gmail.com">MatheusPudolskTechSolutions@gmail.com</a></p>
