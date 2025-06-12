@@ -145,30 +145,13 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Exibe descrição do serviço ao passar mouse (desktop)
+    // Seleciona serviço no formulário ao clicar no card (desktop/mobile)
     var servicoItems = document.querySelectorAll('.servico-item');
     servicoItems.forEach(function(item) {
         item.addEventListener('click', function(e) {
-            var nomeServico = item.querySelector('.servico-nome')?.textContent?.trim();
+            // Busca o nome do serviço (compatível com grids diferentes)
+            var nomeServico = item.querySelector('.servico-nome')?.textContent?.trim() || item.querySelector('span:last-child')?.textContent?.trim();
             var select = document.getElementById('servico');
-            // Desktop: só abre modal se clicar no botão de orçamento
-            if (window.innerWidth > 900) {
-                var botaoOrcamento = e.target.closest('.servico-whats');
-                if (botaoOrcamento && nomeServico && select) {
-                    for (var i = 0; i < select.options.length; i++) {
-                        if (select.options[i].text.trim() === nomeServico) {
-                            select.selectedIndex = i;
-                            break;
-                        }
-                    }
-                    var modal = document.getElementById('formModal');
-                    if (modal) modal.style.display = 'flex';
-                    e.preventDefault();
-                    e.stopPropagation();
-                }
-                return;
-            }
-            // Mobile/tablet: ao clicar no card, abre o modal de orçamento
             if (nomeServico && select) {
                 for (var i = 0; i < select.options.length; i++) {
                     if (select.options[i].text.trim() === nomeServico) {
@@ -176,17 +159,15 @@ window.addEventListener('DOMContentLoaded', function() {
                         break;
                     }
                 }
-                var modal = document.getElementById('formModal');
-                if (modal) modal.style.display = 'flex';
-                e.stopPropagation();
             }
+            // Não abre modal de orçamento automaticamente, pois já há lógica para modal explicação
         });
     });
+
     // Fecha todos tooltips ao clicar fora (mobile)
     document.body.addEventListener('click', function(e) {
         if (window.innerWidth <= 900) {
             servicoItems.forEach(function(item) {
-                // Não fecha se clicar no link do WhatsApp
                 if (e.target.classList && e.target.classList.contains('servico-whats')) return;
                 item.classList.remove('mostrar-desc');
             });
