@@ -130,6 +130,23 @@ section {
     padding: 30px 20px;
     background-color: #243447;
 }
+.servicos-destaque,
+.diferenciais-destaque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.secao-header {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 24px auto;
+}
+.secao-descricao {
+    color: #d5f5e3;
+    font-size: 1.05em;
+    margin: 12px auto 0 auto;
+    max-width: 680px;
+}
 .centralizado {
     max-width: 700px;
     margin: 0 auto;
@@ -295,16 +312,17 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 22px;
-    margin: 28px 0 0 0;
+    margin: 28px auto 0 auto;
     padding: 0;
     position: relative;
     z-index: 1;
+    max-width: 1100px;
 }
 .servico-item {
     position: relative;
     cursor: pointer;
     z-index: 2;
-    background: linear-gradient(120deg, #22304a 80%, #25D366 100%);
+    background: linear-gradient(120deg, #22304a 80%, rgba(37, 211, 102, 0.9) 100%);
     border-radius: 14px;
     padding: 28px 20px;
     color: #fff;
@@ -317,6 +335,57 @@ footer {
     border: none;
     position: relative;
     cursor: pointer;
+}
+.servico-icone {
+    font-size: 1.6em;
+}
+.accent-green {
+    color: #25D366;
+}
+.accent-blue {
+    color: #1e7fc6;
+}
+.accent-pink {
+    color: #e60073;
+}
+.accent-mint {
+    color: #4ecb8f;
+}
+.accent-cyan {
+    color: #00e6e6;
+}
+.accent-purple {
+    color: #a366e6;
+}
+.accent-yellow {
+    color: #f9d923;
+}
+.accent-orange {
+    color: #ff9800;
+}
+.servico-item.accent-green {
+    background: linear-gradient(120deg, #22304a 80%, rgba(37, 211, 102, 0.9) 100%);
+}
+.servico-item.accent-blue {
+    background: linear-gradient(120deg, #22304a 80%, rgba(30, 127, 198, 0.9) 100%);
+}
+.servico-item.accent-pink {
+    background: linear-gradient(120deg, #22304a 80%, rgba(230, 0, 115, 0.9) 100%);
+}
+.servico-item.accent-mint {
+    background: linear-gradient(120deg, #22304a 80%, rgba(78, 203, 143, 0.9) 100%);
+}
+.servico-item.accent-cyan {
+    background: linear-gradient(120deg, #22304a 80%, rgba(0, 230, 230, 0.9) 100%);
+}
+.servico-item.accent-purple {
+    background: linear-gradient(120deg, #22304a 80%, rgba(163, 102, 230, 0.9) 100%);
+}
+.servico-item.accent-yellow {
+    background: linear-gradient(120deg, #22304a 80%, rgba(249, 217, 35, 0.9) 100%);
+}
+.servico-item.accent-orange {
+    background: linear-gradient(120deg, #22304a 80%, rgba(255, 152, 0, 0.9) 100%);
 }
 /* Tooltip só aparece no hover em telas grandes */
 @media (min-width: 901px) {
@@ -421,6 +490,13 @@ footer {
         width: 100%;
         font-size: 0.98em;
     }
+    .hero-highlights {
+        max-width: 100%;
+        text-align: left;
+    }
+    .hero-actions {
+        flex-direction: column;
+    }
 }
 
 /* ===== DIFERENCIAIS ===== */
@@ -432,6 +508,7 @@ footer {
     padding: 0;
     margin: 20px 0 0 0;
     justify-content: center;
+    max-width: 1100px;
 }
 .diferenciais-lista li {
     background: #22304a;
@@ -447,8 +524,12 @@ footer {
     border: none;
 }
 .diferenciais-lista i {
-    color: #00e6e6;
     font-size: 1.5em;
+}
+.diferencial-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ===== DEPOIMENTOS ===== */
@@ -688,6 +769,16 @@ footer {
     background: linear-gradient(90deg,#1e7fc6 60%,#25D366 100%);
     color: #fff;
 }
+.cta-link.secondary {
+    background: transparent;
+    border: 1px solid #25D366;
+    color: #25D366;
+    box-shadow: none;
+}
+.cta-link.secondary:hover {
+    background: #25D366;
+    color: #192734;
+}
 
 .bloco-institucional {
     background: #22304a;
@@ -724,6 +815,32 @@ footer {
     max-width: 520px;
     margin: 0 auto 18px auto;
 }
+.hero-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 18px auto 20px auto;
+    max-width: 520px;
+    text-align: left;
+    color: #dfffea;
+}
+.hero-highlights li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+.hero-highlights i {
+    color: #25D366;
+    font-size: 1.1em;
+}
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 8px;
+}
 .institucional-info {
     margin: 0 auto 18px auto;
     max-width: 520px;
@@ -744,6 +861,11 @@ footer {
 .cta-final {
     text-align: center;
     margin: 32px 0 0 0;
+}
+.cta-text {
+    font-size: 1.2em;
+    color: #e0ffe0;
+    margin-bottom: 16px;
 }
 .diferencial-card {
     background: #22304a;
