@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', function () {
     var whatsappPhone = '5534997227301';
+    var budgetEmail = 'mptechsolucions@yahoo.com';
     var defaultMessage = 'Olá! Gostaria de solicitar um orçamento.';
     var menuToggle = document.getElementById('menuToggle');
     var menuCentral = document.getElementById('menuCentral');
@@ -10,12 +11,15 @@ window.addEventListener('DOMContentLoaded', function () {
     var budgetClose = formModal ? formModal.querySelector('.close') : null;
     var serviceClose = serviceModal ? serviceModal.querySelector('.close') : null;
     var btnServicoWhats = document.getElementById('btnServicoWhats');
+    var btnServicoEmail = document.getElementById('btnServicoEmail');
     var modalServicoTexto = document.getElementById('modalServicoTexto');
     var modalServicoTitle = document.getElementById('modalServicoTitle');
     var yearElements = document.querySelectorAll('.current-year');
     var navLinks = document.querySelectorAll('.menu-central a');
     var serviceCards = document.querySelectorAll('.servico-item[data-servico]');
     var serviceSelect = document.getElementById('servico');
+    var budgetChannel = document.getElementById('canal');
+    var budgetSubmitButton = budgetForm ? budgetForm.querySelector('button[type="submit"]') : null;
 
     var servicoExplicacoes = {
         celular: {
@@ -129,8 +133,39 @@ window.addEventListener('DOMContentLoaded', function () {
         menuToggle.setAttribute('aria-expanded', 'false');
     }
 
+    function buildWhatsAppLink(message) {
+        return 'https://wa.me/' + whatsappPhone + '?text=' + encodeURIComponent(message);
+    }
+
+    function buildEmailLink(subject, message) {
+        return 'mailto:' + budgetEmail + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(message);
+    }
+
+    function buildBudgetMessage(nome, contato, servico, detalhes) {
+        return (
+            'Olá, meu nome é ' + nome + '.\n' +
+            'Quero solicitar orçamento para: ' + servico + '.\n' +
+            'Contato: ' + contato + '\n' +
+            'Detalhes: ' + detalhes
+        );
+    }
+
+    function updateBudgetSubmitLabel() {
+        if (!budgetSubmitButton) {
+            return;
+        }
+
+        if (budgetChannel && budgetChannel.value === 'email') {
+            budgetSubmitButton.textContent = 'Enviar via E-mail';
+            return;
+        }
+
+        budgetSubmitButton.textContent = 'Enviar via WhatsApp';
+    }
+
     setCurrentYear();
     setActiveMenu();
+    updateBudgetSubmitLabel();
 
     budgetButtons.forEach(function (button) {
         button.addEventListener('click', function (event) {
@@ -138,7 +173,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 event.preventDefault();
                 openModal(formModal);
             } else {
-                window.open('https://wa.me/' + whatsappPhone + '?text=' + encodeURIComponent(defaultMessage), '_blank');
+                window.open(buildWhatsAppLink(defaultMessage), '_blank');
             }
         });
     });
@@ -156,11 +191,16 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     if (budgetForm) {
+        if (budgetChannel) {
+            budgetChannel.addEventListener('change', updateBudgetSubmitLabel);
+        }
+
         budgetForm.addEventListener('submit', function (event) {
             var nome = document.getElementById('nome').value.trim();
             var contato = document.getElementById('contato').value.trim();
             var servico = document.getElementById('servico').value.trim();
             var detalhes = document.getElementById('detalhes').value.trim();
+            var canal = budgetChannel ? budgetChannel.value : 'whatsapp';
 
             event.preventDefault();
 
@@ -169,15 +209,19 @@ window.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            var mensagem =
-                'Olá, meu nome é ' + nome + '.\n' +
-                'Quero solicitar orçamento para: ' + servico + '.\n' +
-                'Contato: ' + contato + '\n' +
-                'Detalhes: ' + detalhes;
+            var mensagem = buildBudgetMessage(nome, contato, servico, detalhes);
+            var emailSubject = 'Solicitação de orçamento - ' + servico;
 
-            window.open('https://wa.me/' + whatsappPhone + '?text=' + encodeURIComponent(mensagem), '_blank');
             closeModal(formModal);
             budgetForm.reset();
+            updateBudgetSubmitLabel();
+
+            if (canal === 'email') {
+                window.location.href = buildEmailLink(emailSubject, mensagem);
+                return;
+            }
+
+            window.open(buildWhatsAppLink(mensagem), '_blank');
         });
     }
 
@@ -218,9 +262,16 @@ window.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
+            var serviceMessage = 'Olá! Gostaria de solicitar orçamento para ' + explicacao.titulo + '.';
+
             modalServicoTitle.textContent = explicacao.titulo;
             modalServicoTexto.textContent = explicacao.texto;
-            btnServicoWhats.href = 'https://wa.me/' + whatsappPhone + '?text=' + encodeURIComponent('Olá! Gostaria de solicitar orçamento para ' + explicacao.titulo + '.');
+            btnServicoWhats.href = buildWhatsAppLink(serviceMessage);
+
+            if (btnServicoEmail) {
+                btnServicoEmail.href = buildEmailLink('Solicitação de orçamento - ' + explicacao.titulo, serviceMessage);
+            }
+
             openModal(serviceModal);
         }
 
