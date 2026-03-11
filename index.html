@@ -2,146 +2,438 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MP Tech Solutions</title>
-    <meta name="description" content="Soluções rápidas, seguras e personalizadas em TI, CFTV, redes, manutenção, consultoria e criação de sites para residências e empresas em Uberlândia e região. Atendimento ágil, transparente e de alta qualidade." />
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="description" content="Assistência técnica para celulares, computadores e videogames, aluguel de equipamentos, segurança eletrônica, intranet, sites e sistemas comerciais para empresas e residências em Uberlândia e região." />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="icon" type="image/jpeg" href="imagens/logo/logomp.jpg" />
 </head>
 <body>
     <header>
         <div class="header-container">
-            <img src="imagens/logo/logomp.jpg" alt="Logo da MP Tech Solutions, um M e P estilizados em azul e branco" class="logo" />
+            <img src="imagens/logo/logomp.jpg" alt="Logo da MP Tech Solutions, com as letras M e P estilizadas em azul e branco" class="logo" />
             <div class="header-texto">
-                <h1 class="titulo-principal">MP Tech Solutions</h1>
-                <p class="subtitulo">Soluções rápidas e seguras em TI, CFTV e manutenção</p>
+                <h1>MP Tech Solutions</h1>
+                <p class="subtitulo">Infraestrutura, suporte e segurança para empresas e residências</p>
             </div>
         </div>
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
         <nav class="menu-central" id="menuCentral" aria-label="Menu principal">
-            <a href="index.html" aria-label="Ir para a página inicial">Início</a>
-            <a href="servicos.html" aria-label="Ver serviços">Serviços</a>
-            <a href="diferenciais.html" aria-label="Ver diferenciais">Diferenciais</a>
-            <a href="depoimentos.html" aria-label="Ver depoimentos">Depoimentos</a>
-            <a href="faq.html" aria-label="Ver perguntas frequentes">FAQ</a>
-            <a href="contato.html" aria-label="Ir para a página de contato">Contato</a>
+            <a href="index.html">Início</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="diferenciais.html">Diferenciais</a>
+            <a href="depoimentos.html">Depoimentos</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contato.html">Contato</a>
         </nav>
     </header>
+
     <main>
-        <!-- Bloco institucional centralizado -->
         <section class="bloco-institucional">
-            <img src="imagens/logo/logomp.jpg" alt="Logo da MP Tech Solutions" class="logo logo-institucional" />
-            <h1 class="titulo-principal">MP Tech Solutions</h1>
-            <p class="bem-vindo">Tecnologia que traz tranquilidade para sua casa e empresa.</p>
-            <p class="descricao">Soluções rápidas, seguras e personalizadas em TI, CFTV, redes, manutenção, consultoria e criação de sites para residências e empresas.</p>
-            <div class="institucional-info">
-                <p><b>Missão:</b> Facilitar o dia a dia dos nossos clientes com atendimento ágil, transparente e de alta qualidade.</p>
-                <p><b>Visão:</b> Ser referência em tecnologia, suporte e confiança em Uberlândia e região.</p>
-                <p><b>Valores:</b> Ética, respeito, inovação, proximidade e excelência no atendimento.</p>
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">ATENDIMENTO RESIDENCIAL E EMPRESARIAL</p>
+                    <h2 class="titulo-principal">Tecnologia com explicação simples, suporte próximo e soluções que passam confiança desde o primeiro contato.</h2>
+                    <p class="descricao">A MP Tech Solutions atende Uberlândia e região com assistência técnica para celulares, computadores e videogames, redes, CFTV, controle de acesso, locação de equipamentos, servidores, consultoria, intranet, sites e sistemas comerciais. O foco é organizar a demanda, explicar o cenário com clareza e entregar uma solução adequada ao ambiente do cliente.</p>
+                    <div class="hero-actions">
+                        <a href="contato.html" class="cta-link">Solicitar orçamento</a>
+                        <a href="servicos.html" class="cta-link secondary">Conhecer serviços</a>
+                    </div>
+                    <ul class="trust-pills">
+                        <li>Presencial e remoto</li>
+                        <li>Uberlândia e região</li>
+                        <li>Orçamento alinhado ao cenário</li>
+                        <li>Residencial e empresarial</li>
+                    </ul>
+                </div>
+                <aside class="hero-panel-card">
+                    <p class="hero-panel-label">O que o cliente encontra aqui</p>
+                    <h3>Organização comercial e técnica para decidir com mais segurança.</h3>
+                    <div class="hero-capabilities">
+                        <div class="hero-capability">
+                            <i class="fas fa-comments" aria-hidden="true"></i>
+                            <div>
+                                <strong>Diagnóstico explicado</strong>
+                                <span>Você entende o problema, a prioridade da demanda e o que faz sentido contratar.</span>
+                            </div>
+                        </div>
+                        <div class="hero-capability">
+                            <i class="fas fa-file-signature" aria-hidden="true"></i>
+                            <div>
+                                <strong>Escopo mais claro</strong>
+                                <span>O atendimento busca reduzir improviso, com proposta alinhada ao tipo de ambiente e necessidade.</span>
+                            </div>
+                        </div>
+                        <div class="hero-capability">
+                            <i class="fas fa-handshake-angle" aria-hidden="true"></i>
+                            <div>
+                                <strong>Atendimento próximo</strong>
+                                <span>Presença local, acompanhamento pós-serviço e comunicação direta para gerar mais tranquilidade.</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
             </div>
-            <p class="descricao">Nosso objetivo é garantir tranquilidade e segurança para você e seu negócio.</p>
-            <ul class="hero-highlights">
-                <li><i class="fas fa-check-circle"></i> Atendimento ágil com diagnóstico claro.</li>
-                <li><i class="fas fa-check-circle"></i> Equipe preparada para suporte presencial e remoto.</li>
-                <li><i class="fas fa-check-circle"></i> Projetos sob medida para cada necessidade.</li>
-            </ul>
-            <div class="hero-actions">
-                <a href="contato.html" class="cta-link">Solicite um orçamento</a>
-                <a href="servicos.html" class="cta-link secondary">Conheça nossos serviços</a>
+            <div class="hero-summary">
+                <div class="hero-summary-item">
+                    <strong>Mais clareza antes de contratar</strong>
+                    <p>O cliente entende o cenário e recebe orientação mais objetiva sobre o que precisa ser resolvido.</p>
+                </div>
+                <div class="hero-summary-item">
+                    <strong>Atendimento adaptado ao ambiente</strong>
+                    <p>Empresas, comércios e residências têm necessidades diferentes e o serviço é pensado dessa forma.</p>
+                </div>
+                <div class="hero-summary-item">
+                    <strong>Continuidade e suporte</strong>
+                    <p>Além da execução, o objetivo é deixar a estrutura mais estável e facilitar futuras necessidades.</p>
+                </div>
             </div>
         </section>
 
-        <!-- Principais serviços em cards -->
-        <section class="servicos-destaque">
+        <section>
             <div class="secao-header">
-                <h2 class="titulo-servicos">Nossas Soluções</h2>
-                <p class="secao-descricao">Do suporte rápido à entrega de projetos completos, cuidamos da infraestrutura e da presença digital do seu negócio.</p>
+                <p class="eyebrow">QUEM SOMOS</p>
+                <h2 class="titulo-servicos">Atendimento técnico com linguagem simples, prioridade no que é urgente e foco em solução adequada.</h2>
+                <p class="secao-descricao">A proposta da MP Tech Solutions é transformar tecnologia em algo mais claro para o cliente. Isso significa entender a demanda, traduzir o diagnóstico de forma objetiva e indicar um caminho proporcional ao que realmente precisa ser feito.</p>
             </div>
-            <div class="servicos-grid">
-                <div class="servico-item accent-green" data-servico="computador"><span class="servico-icone accent-green">💻</span><span>Manutenção de computadores e notebooks</span></div>
-                <div class="servico-item accent-blue" data-servico="cftv"><span class="servico-icone accent-blue">📹</span><span>Instalação e manutenção de câmeras CFTV</span></div>
-                <div class="servico-item accent-pink" data-servico="redes"><span class="servico-icone accent-pink">🌐</span><span>Infraestrutura de redes e cabeamento</span></div>
-                <div class="servico-item accent-mint" data-servico="suporte"><span class="servico-icone accent-mint">🛠️</span><span>Suporte técnico para empresas</span></div>
-                <div class="servico-item accent-cyan" data-servico="acesso"><span class="servico-icone accent-cyan">🔒</span><span>Controle de acesso</span></div>
-                <div class="servico-item accent-purple" data-servico="impressora"><span class="servico-icone accent-purple">🖨️</span><span>Manutenção de impressoras</span></div>
-                <div class="servico-item accent-yellow" data-servico="servidor"><span class="servico-icone accent-yellow">📦</span><span>Backup e configuração de servidores</span></div>
-                <div class="servico-item accent-blue" data-servico="consultoria"><span class="servico-icone accent-blue">💼</span><span>Consultoria em TI</span></div>
-                <div class="servico-item accent-orange" data-servico="sites"><span class="servico-icone accent-orange">🌟</span><span>Criação de sites personalizados</span></div>
+            <div class="institucional-info">
+                <p><b>Missão:</b> Facilitar o dia a dia dos clientes com atendimento ágil, transparente e de alta qualidade.</p>
+                <p><b>Visão:</b> Ser referência em tecnologia, suporte e confiança em Uberlândia e região.</p>
+                <p><b>Valores:</b> Ética, proximidade, clareza técnica e compromisso com a excelência na entrega.</p>
+            </div>
+            <div class="note-card">
+                <strong>Como isso aparece no atendimento</strong>
+                <p>O cliente não precisa chegar com o problema totalmente mapeado. A conversa inicial serve justamente para entender o cenário, organizar as prioridades e orientar a melhor próxima ação.</p>
             </div>
         </section>
-        <!-- Modal explicação serviço -->
+
+        <section>
+            <div class="secao-header centered">
+                <p class="eyebrow">COMO FUNCIONA</p>
+                <h2 class="titulo-servicos">Um processo simples para deixar o cliente mais confortável desde o primeiro contato.</h2>
+                <p class="secao-descricao">A estrutura do atendimento foi organizada para reduzir dúvidas, alinhar expectativa e tornar a contratação mais segura.</p>
+            </div>
+            <div class="process-grid">
+                <article class="process-card">
+                    <span class="process-number">01</span>
+                    <h3>Contato inicial</h3>
+                    <p>O cliente apresenta a necessidade pelo WhatsApp, formulário ou outro canal disponível.</p>
+                </article>
+                <article class="process-card">
+                    <span class="process-number">02</span>
+                    <h3>Entendimento do cenário</h3>
+                    <p>A demanda é organizada para identificar o tipo de atendimento, prioridade e contexto do ambiente.</p>
+                </article>
+                <article class="process-card">
+                    <span class="process-number">03</span>
+                    <h3>Orçamento e alinhamento</h3>
+                    <p>O escopo é explicado e a proposta é ajustada conforme a necessidade real do cliente.</p>
+                </article>
+                <article class="process-card">
+                    <span class="process-number">04</span>
+                    <h3>Execução e suporte</h3>
+                    <p>O serviço é realizado com acompanhamento e orientação para manter a estrutura mais estável depois da entrega.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="servicos-destaque">
+            <div class="secao-header">
+                <p class="eyebrow">SERVIÇOS ORGANIZADOS</p>
+                <h2 class="titulo-servicos">O cliente entende melhor o que atendemos quando os serviços estão divididos por contexto.</h2>
+                <p class="secao-descricao">Em vez de uma lista solta, os serviços foram agrupados para facilitar a leitura e ajudar o visitante a identificar rapidamente a solução mais próxima da sua necessidade.</p>
+            </div>
+            <div class="category-grid">
+                <article class="category-card">
+                    <strong>Assistência técnica e operação</strong>
+                    <p>Para quem precisa manter dispositivos, estações de trabalho e equipamentos de uso diário funcionando com mais estabilidade.</p>
+                    <ul>
+                        <li>Assistência técnica para celulares</li>
+                        <li>Manutenção de computadores e notebooks</li>
+                        <li>Assistência técnica para videogames</li>
+                        <li>Infraestrutura de redes e cabeamento</li>
+                        <li>Suporte técnico para empresas</li>
+                    </ul>
+                    <p>Marcas de celulares mais comuns no atendimento: Samsung, Xiaomi, iPhone, Motorola e similares.</p>
+                </article>
+                <article class="category-card">
+                    <strong>Segurança eletrônica e locação</strong>
+                    <p>Para residências, comércios e empresas que querem ampliar proteção, ter contingência e ganhar flexibilidade operacional.</p>
+                    <ul>
+                        <li>Instalação e manutenção de câmeras CFTV</li>
+                        <li>Controle de acesso</li>
+                        <li>Aluguel de celulares e computadores</li>
+                        <li>Backup, servidores e impressoras</li>
+                    </ul>
+                </article>
+                <article class="category-card">
+                    <strong>Consultoria e produtos digitais</strong>
+                    <p>Para quem precisa apresentar melhor a empresa, organizar processos internos e operar comercialmente com mais apoio digital.</p>
+                    <ul>
+                        <li>Consultoria em TI</li>
+                        <li>Criação de intranet corporativa</li>
+                        <li>Criação de sites personalizados</li>
+                        <li>Sites e sistemas comerciais</li>
+                    </ul>
+                </article>
+            </div>
+            <div class="servicos-grid">
+                <div class="servico-item accent-mint" data-servico="celular"><i class="fas fa-mobile-screen-button servico-icone accent-mint" aria-hidden="true"></i><span class="servico-nome">Assistência técnica para celulares</span></div>
+                <div class="servico-item accent-green" data-servico="computador"><i class="fas fa-laptop-code servico-icone accent-green" aria-hidden="true"></i><span class="servico-nome">Manutenção de computadores e notebooks</span></div>
+                <div class="servico-item accent-purple" data-servico="videogame"><i class="fas fa-gamepad servico-icone accent-purple" aria-hidden="true"></i><span class="servico-nome">Assistência técnica para videogames</span></div>
+                <div class="servico-item accent-blue" data-servico="cftv"><i class="fas fa-video servico-icone accent-blue" aria-hidden="true"></i><span class="servico-nome">Instalação e manutenção de câmeras CFTV</span></div>
+                <div class="servico-item accent-pink" data-servico="redes"><i class="fas fa-network-wired servico-icone accent-pink" aria-hidden="true"></i><span class="servico-nome">Infraestrutura de redes e cabeamento</span></div>
+                <div class="servico-item accent-mint" data-servico="suporte"><i class="fas fa-headset servico-icone accent-mint" aria-hidden="true"></i><span class="servico-nome">Suporte técnico para empresas</span></div>
+                <div class="servico-item accent-cyan" data-servico="acesso"><i class="fas fa-fingerprint servico-icone accent-cyan" aria-hidden="true"></i><span class="servico-nome">Controle de acesso</span></div>
+                <div class="servico-item accent-purple" data-servico="impressora"><i class="fas fa-print servico-icone accent-purple" aria-hidden="true"></i><span class="servico-nome">Manutenção de impressoras</span></div>
+                <div class="servico-item accent-yellow" data-servico="aluguel"><i class="fas fa-repeat servico-icone accent-yellow" aria-hidden="true"></i><span class="servico-nome">Aluguel de celulares e computadores</span></div>
+                <div class="servico-item accent-yellow" data-servico="servidor"><i class="fas fa-server servico-icone accent-yellow" aria-hidden="true"></i><span class="servico-nome">Backup e configuração de servidores</span></div>
+                <div class="servico-item accent-blue" data-servico="consultoria"><i class="fas fa-briefcase servico-icone accent-blue" aria-hidden="true"></i><span class="servico-nome">Consultoria em TI</span></div>
+                <div class="servico-item accent-cyan" data-servico="intranet"><i class="fas fa-sitemap servico-icone accent-cyan" aria-hidden="true"></i><span class="servico-nome">Criação de intranet corporativa</span></div>
+                <div class="servico-item accent-orange" data-servico="sites"><i class="fas fa-globe servico-icone accent-orange" aria-hidden="true"></i><span class="servico-nome">Criação de sites personalizados</span></div>
+                <div class="servico-item accent-orange" data-servico="sistemas"><i class="fas fa-cart-shopping servico-icone accent-orange" aria-hidden="true"></i><span class="servico-nome">Sites e sistemas comerciais</span></div>
+            </div>
+        </section>
+
+        <section class="diferenciais-destaque">
+            <div class="secao-header">
+                <p class="eyebrow">POR QUE ISSO PASSA MAIS CONFIANÇA</p>
+                <h2 class="titulo-diferenciais">Informações claras e compromissos visíveis deixam o cliente mais à vontade para contratar.</h2>
+                <p class="secao-descricao">Além do serviço em si, o site agora mostra como o atendimento acontece, o que pode ser esperado e quais pontos ajudam a reduzir insegurança na contratação.</p>
+            </div>
+            <div class="diferenciais-lista">
+                <div class="diferencial-card"><i class="fas fa-bolt diferencial-icone accent-green"></i> Atendimento rápido e personalizado</div>
+                <div class="diferencial-card"><i class="fas fa-shield-alt diferencial-icone accent-blue"></i> Garantia e acompanhamento pós-serviço</div>
+                <div class="diferencial-card"><i class="fas fa-user-check diferencial-icone accent-pink"></i> Suporte remoto e presencial conforme o cenário</div>
+                <div class="diferencial-card"><i class="fas fa-file-lines diferencial-icone accent-mint"></i> Escopo mais claro antes da execução</div>
+                <div class="diferencial-card"><i class="fas fa-headset diferencial-icone accent-cyan"></i> Comunicação direta e linguagem acessível</div>
+                <div class="diferencial-card"><i class="fas fa-lightbulb diferencial-icone accent-yellow"></i> Soluções sob medida, sem proposta genérica</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="secao-header">
+                <p class="eyebrow">EXEMPLOS DE DEMANDAS ATENDIDAS</p>
+                <h2 class="titulo-servicos">Cenários que ajudam o cliente a visualizar onde o serviço faz sentido.</h2>
+                <p class="secao-descricao">Mesmo sem conhecer todos os detalhes técnicos, o visitante consegue se identificar com situações comuns e entender melhor o valor da solução.</p>
+            </div>
+            <div class="case-grid">
+                <article class="case-card">
+                    <p class="case-label">EMPRESAS E ESCRITÓRIOS</p>
+                    <h3>Ambientes que precisam de continuidade operacional</h3>
+                    <p>Organização de rede, manutenção de máquinas, locação de equipamentos, suporte recorrente e rotinas de backup para reduzir interrupções.</p>
+                </article>
+                <article class="case-card">
+                    <p class="case-label">COMÉRCIO E ACESSO</p>
+                    <h3>Locais que precisam de mais visibilidade e controle</h3>
+                    <p>Implantação e manutenção de CFTV e controle de acesso para reforçar segurança e acompanhamento do ambiente.</p>
+                </article>
+                <article class="case-card">
+                    <p class="case-label">PRODUTOS DIGITAIS</p>
+                    <h3>Empresas que querem operar e se apresentar melhor online</h3>
+                    <p>Criação de sites, intranet corporativa e sistemas comerciais para transmitir mais profissionalismo e apoiar rotinas internas e vendas.</p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <div class="secao-header">
+                <p class="eyebrow">PERCEPÇÕES DOS CLIENTES</p>
+                <h2 class="titulo-diferenciais">O que costuma ser mais valorizado no atendimento.</h2>
+                <p class="secao-descricao">Os comentários abaixo reforçam os pontos que mais ajudam a construir confiança: rapidez, clareza, atenção e entrega alinhada à necessidade.</p>
+            </div>
+            <div class="testimonial-grid">
+                <article class="depoimento">
+                    <p>“Atendimento rápido, explicação simples e solução objetiva para o problema. Passou segurança do começo ao fim.”</p>
+                    <span>Cliente residencial</span>
+                </article>
+                <article class="depoimento">
+                    <p>“O diferencial foi entender a rotina da empresa antes de sugerir a solução. Isso deixou a contratação muito mais tranquila.”</p>
+                    <span>Cliente empresarial</span>
+                </article>
+                <article class="depoimento">
+                    <p>“Além de executar o serviço, houve orientação sobre o que estava acontecendo e como evitar novas falhas.”</p>
+                    <span>Atendimento técnico em suporte e infraestrutura</span>
+                </article>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="secao-header">
+                <p class="eyebrow">FAQ</p>
+                <h2 class="titulo-diferenciais">Respostas rápidas para dúvidas que normalmente travam a decisão.</h2>
+                <p class="secao-descricao">Quanto mais objetiva for a informação, menor a insegurança para entrar em contato e solicitar avaliação.</p>
+            </div>
+            <details>
+                <summary>Quais serviços vocês atendem?</summary>
+                <p>Assistência técnica para celulares, computadores e videogames, CFTV, redes, suporte técnico, controle de acesso, locação de equipamentos, impressoras, servidores, consultoria, intranet, sites e sistemas comerciais.</p>
+            </details>
+            <details>
+                <summary>Vocês também trabalham com aluguel de equipamentos?</summary>
+                <p>Sim. A MP Tech Solutions também trabalha com aluguel de celulares e computadores para cenários temporários, contingência e apoio operacional.</p>
+            </details>
+            <details>
+                <summary>Vocês atendem empresas e residências?</summary>
+                <p>Sim. O atendimento é adaptado ao tipo de ambiente e à necessidade de cada cliente.</p>
+            </details>
+            <details>
+                <summary>Como funciona o orçamento?</summary>
+                <p>O primeiro contato serve para entender a demanda, organizar o cenário e alinhar a proposta mais adequada.</p>
+            </details>
+            <details>
+                <summary>Há atendimento presencial e remoto?</summary>
+                <p>Sim. O formato depende do tipo de necessidade e do que for mais eficiente para o cliente.</p>
+            </details>
+            <details>
+                <summary>Os serviços têm garantia e acompanhamento?</summary>
+                <p>O site comunica garantia nos serviços e suporte pós-serviço, com alinhamento conforme o escopo contratado.</p>
+            </details>
+        </section>
+
+        <section>
+            <div class="secao-header">
+                <p class="eyebrow">CONTATO E TRANSPARÊNCIA</p>
+                <h2 class="titulo-servicos">Informações objetivas ajudam o cliente a entrar em contato com mais confiança.</h2>
+                <p class="secao-descricao">Além dos canais de atendimento, o site passa a informar melhor como o orçamento funciona, como a visita é organizada e onde o cliente encontra informações de privacidade e condições gerais.</p>
+            </div>
+            <div class="contact-grid">
+                <article class="contact-card">
+                    <div class="hero-capability">
+                        <i class="fab fa-whatsapp accent-green" aria-hidden="true"></i>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <span><a href="https://wa.me/5534997227301" target="_blank" rel="noopener noreferrer">+55 (34) 99722-7301</a><br />Canal principal para orçamento e alinhamento inicial.</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="contact-card">
+                    <div class="hero-capability">
+                        <i class="fas fa-envelope accent-blue" aria-hidden="true"></i>
+                        <div>
+                            <strong>E-mail</strong>
+                            <span><a href="mailto:MatheusPudolskTechSolutions@gmail.com">MatheusPudolskTechSolutions@gmail.com</a><br />Canal útil para demandas mais detalhadas e retorno comercial.</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="contact-card">
+                    <div class="hero-capability">
+                        <i class="fab fa-instagram accent-pink" aria-hidden="true"></i>
+                        <div>
+                            <strong>Instagram</strong>
+                            <span><a href="https://instagram.com/MPTechSolutions" target="_blank" rel="noopener noreferrer">@MPTechSolutions</a><br />Canal complementar para conhecer a marca e iniciar contato.</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="contact-card">
+                    <div class="hero-capability">
+                        <i class="fas fa-location-dot accent-mint" aria-hidden="true"></i>
+                        <div>
+                            <strong>Região atendida</strong>
+                            <span>Uberlândia e região, com avaliação conforme o tipo de atendimento necessário.</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="contact-card">
+                    <div class="hero-capability">
+                        <i class="fas fa-laptop-house accent-cyan" aria-hidden="true"></i>
+                        <div>
+                            <strong>Modalidade de atendimento</strong>
+                            <span>Atuação presencial e remota, de acordo com a demanda e a viabilidade técnica.</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="contact-card">
+                    <div class="hero-capability">
+                        <i class="fas fa-calendar-check accent-yellow" aria-hidden="true"></i>
+                        <div>
+                            <strong>Agendamento e retorno</strong>
+                            <span>Orçamentos e visitas são alinhados conforme a agenda e a necessidade apresentada pelo cliente.</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="note-card">
+                <strong>Mais transparência antes da contratação</strong>
+                <p>As condições gerais do atendimento e a política de privacidade agora ficam acessíveis diretamente pelo site. Isso ajuda o cliente a entender como os dados são usados, como o atendimento é alinhado e em que momento detalhes comerciais são definidos.</p>
+                <div class="inline-link-group">
+                    <a class="text-link" href="politica-privacidade.html">Política de Privacidade</a>
+                    <a class="text-link" href="condicoes-atendimento.html">Condições de Atendimento</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-final">
+            <p class="cta-text">Se o objetivo é contratar com mais clareza, segurança e atendimento próximo, a próxima etapa é conversar sobre a sua necessidade.</p>
+            <div class="page-actions">
+                <a href="contato.html" class="cta-link">Falar com a MP Tech Solutions</a>
+                <a href="servicos.html" class="cta-link secondary">Explorar todos os serviços</a>
+            </div>
+        </section>
+
         <div id="modalServico" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalServicoTitle" aria-live="polite" style="display:none;">
             <div class="modal-content">
                 <span class="close" tabindex="0" aria-label="Fechar" role="button">&times;</span>
                 <h2 id="modalServicoTitle">Serviço</h2>
                 <p id="modalServicoTexto"></p>
-                <a id="btnServicoWhats" href="#" target="_blank" class="cta-link">Solicitar orçamento via WhatsApp</a>
+                <a id="btnServicoWhats" href="#" target="_blank" rel="noopener noreferrer" class="cta-link">Solicitar orçamento via WhatsApp</a>
             </div>
         </div>
-        <button id="btnOrcamento" class="btn-flutuante" aria-label="Solicitar Orçamento">💬 Solicitar Orçamento</button>
+
+        <button id="btnOrcamento" class="btn-flutuante" aria-label="Solicitar orçamento"><i class="fas fa-comment-dots" aria-hidden="true"></i><span>Solicitar orçamento</span></button>
+
         <div id="formModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none;">
             <div class="modal-content">
                 <span class="close" tabindex="0" aria-label="Fechar" role="button">&times;</span>
-                <h2 id="modalTitle">Solicitar Orçamento</h2>
+                <h2 id="modalTitle">Solicitar orçamento</h2>
                 <form id="orcamentoForm" autocomplete="off">
-                    <label for="nome">Nome:</label>
+                    <label for="nome">Nome</label>
                     <input type="text" id="nome" required autocomplete="off" />
-                    <label for="contato">Meio de Contato (e-mail ou telefone):</label>
-                    <input type="text" id="contato" required placeholder="ex: email@dominio.com ou (34) 91234-5678" autocomplete="off" />
-                    <label for="servico">Serviço desejado:</label>
+                    <label for="contato">Meio de contato</label>
+                    <input type="text" id="contato" required placeholder="E-mail ou telefone" autocomplete="off" />
+                    <label for="servico">Serviço desejado</label>
                     <select id="servico" required>
                         <option value="" disabled selected>Selecione um serviço</option>
+                        <option value="Assistência técnica para celulares">Assistência técnica para celulares</option>
                         <option value="Manutenção de computadores e notebooks">Manutenção de computadores e notebooks</option>
+                        <option value="Assistência técnica para videogames">Assistência técnica para videogames</option>
                         <option value="Instalação e manutenção de câmeras CFTV">Instalação e manutenção de câmeras CFTV</option>
                         <option value="Infraestrutura de redes e cabeamento">Infraestrutura de redes e cabeamento</option>
                         <option value="Suporte técnico para empresas">Suporte técnico para empresas</option>
                         <option value="Controle de acesso">Controle de acesso</option>
+                        <option value="Aluguel de celulares e computadores">Aluguel de celulares e computadores</option>
                         <option value="Backup e configuração de servidores">Backup e configuração de servidores</option>
                         <option value="Manutenção de impressoras">Manutenção de impressoras</option>
                         <option value="Consultoria em TI">Consultoria em TI</option>
+                        <option value="Criação de intranet corporativa">Criação de intranet corporativa</option>
                         <option value="Criação de sites personalizados">Criação de sites personalizados</option>
+                        <option value="Sites e sistemas comerciais">Sites e sistemas comerciais</option>
                     </select>
-                    <label for="detalhes">Informações adicionais:</label>
+                    <label for="detalhes">Informações adicionais</label>
                     <textarea id="detalhes" rows="4" required autocomplete="off"></textarea>
                     <button type="submit">Enviar via WhatsApp</button>
                 </form>
             </div>
         </div>
-
-        <!-- Diferenciais em destaque -->
-        <section class="diferenciais-destaque">
-            <div class="secao-header">
-                <h2 class="titulo-diferenciais">Nossos Diferenciais</h2>
-                <p class="secao-descricao">Mais do que suporte, entregamos parceria contínua para proteger seus dados e garantir a continuidade das operações.</p>
-            </div>
-            <div class="diferenciais-lista">
-                <div class="diferencial-card"><i class="fas fa-bolt diferencial-icone accent-green"></i> Atendimento rápido e personalizado</div>
-                <div class="diferencial-card"><i class="fas fa-shield-alt diferencial-icone accent-blue"></i> Garantia em todos os serviços</div>
-                <div class="diferencial-card"><i class="fas fa-user-check diferencial-icone accent-pink"></i> Suporte remoto e presencial</div>
-                <div class="diferencial-card"><i class="fas fa-certificate diferencial-icone accent-mint"></i> Profissionais qualificados</div>
-                <div class="diferencial-card"><i class="fas fa-headset diferencial-icone accent-cyan"></i> Suporte pós-venda</div>
-                <div class="diferencial-card"><i class="fas fa-lightbulb diferencial-icone accent-yellow"></i> Soluções inovadoras e sob medida</div>
-                <div class="diferencial-card"><i class="fas fa-clock diferencial-icone accent-purple"></i> Resposta ágil e acompanhamento contínuo</div>
-            </div>
-        </section>
-
-        <!-- CTA final -->
-        <section class="cta-final">
-            <p class="cta-text">Pronto para evoluir a tecnologia da sua empresa?</p>
-            <a href="contato.html" class="cta-link">Fale com a MP Tech Solutions</a>
-        </section>
     </main>
+
     <footer>
         <div class="footer-container">
-            <p>&copy; 2025 MP Tech Solutions. Todos os direitos reservados.</p>
+            <p class="footer-title">MP Tech Solutions</p>
+            <p>Infraestrutura, suporte e segurança para empresas e residências em Uberlândia e região.</p>
             <nav class="footer-menu" aria-label="Links rápidos">
-                <a href="servicos.html">Serviços</a> |
+                <a href="index.html">Início</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="diferenciais.html">Diferenciais</a>
                 <a href="contato.html">Contato</a>
+                <a href="politica-privacidade.html">Política de Privacidade</a>
+                <a href="condicoes-atendimento.html">Condições de Atendimento</a>
             </nav>
-            <p>Desenvolvido por <a href="https://www.linkedin.com/in/matheus-de-almeida-silva-721907242/" style="color:#a366e6;font-weight:bold;">Matheus Pudolski</a></p>
+            <p>&copy; <span class="current-year">2026</span> MP Tech Solutions. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <a href="https://www.linkedin.com/in/matheus-de-almeida-silva-721907242/" target="_blank" rel="noopener noreferrer" class="credit-link">Matheus Pudolski</a></p>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

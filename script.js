@@ -1,184 +1,260 @@
-// Corrige escopo duplicado para variáveis globais
-// Unifica e otimiza o controle de modais e botões
-window.addEventListener('DOMContentLoaded', function() {
-    // Botão flutuante/modal orçamento universal
-    var btnsOrcamento = document.querySelectorAll('#btnOrcamento');
-    var modal = document.getElementById("formModal");
-    var closeBtn = document.querySelector("#formModal .close");
-    var form = document.getElementById("orcamentoForm");
-
-    btnsOrcamento.forEach(function(btnOrcamento) {
-        if (btnOrcamento && modal) {
-            btnOrcamento.addEventListener("click", function() {
-                modal.style.display = "flex";
-            });
-        } else if (btnOrcamento && !modal) {
-            btnOrcamento.addEventListener("click", function() {
-                window.open("https://wa.me/5534997227301?text=Olá! Gostaria de solicitar um orçamento.", "_blank");
-            });
-        }
-    });
-    if (closeBtn && modal) {
-        closeBtn.addEventListener("click", function() {
-            modal.style.display = "none";
-        });
-    }
-    window.addEventListener("click", function(e) {
-        if (modal && e.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-    if (form) {
-        form.addEventListener("submit", function(e) {
-            e.preventDefault();
-            var nome = document.getElementById("nome").value.trim();
-            var contato = document.getElementById("contato").value.trim();
-            var servico = document.getElementById("servico").value.trim();
-            var detalhes = document.getElementById("detalhes").value.trim();
-            if (!nome || !contato || !servico || !detalhes) {
-                alert("Por favor, preencha todos os campos.");
-                return;
-            }
-            var mensagem = `Olá, meu nome é ${nome}.\nQuero solicitar orçamento para: ${servico}.\nContato: ${contato}\nDetalhes: ${detalhes}`;
-            var url = `https://wa.me/5534997227301?text=${encodeURIComponent(mensagem)}`;
-            window.open(url, "_blank");
-            modal.style.display = "none";
-            form.reset();
-        });
-    }
-
-    // Modal explicação de serviço (funciona em todas as páginas)
-    var modalServico = document.getElementById('modalServico');
-    var closeServico = modalServico ? modalServico.querySelector('.close') : null;
+window.addEventListener('DOMContentLoaded', function () {
+    var whatsappPhone = '5534997227301';
+    var defaultMessage = 'Olá! Gostaria de solicitar um orçamento.';
+    var menuToggle = document.getElementById('menuToggle');
+    var menuCentral = document.getElementById('menuCentral');
+    var formModal = document.getElementById('formModal');
+    var serviceModal = document.getElementById('modalServico');
+    var budgetButtons = document.querySelectorAll('#btnOrcamento, [data-open="orcamento"]');
+    var budgetForm = document.getElementById('orcamentoForm');
+    var budgetClose = formModal ? formModal.querySelector('.close') : null;
+    var serviceClose = serviceModal ? serviceModal.querySelector('.close') : null;
     var btnServicoWhats = document.getElementById('btnServicoWhats');
     var modalServicoTexto = document.getElementById('modalServicoTexto');
     var modalServicoTitle = document.getElementById('modalServicoTitle');
+    var yearElements = document.querySelectorAll('.current-year');
+    var navLinks = document.querySelectorAll('.menu-central a');
+    var serviceCards = document.querySelectorAll('.servico-item[data-servico]');
+    var serviceSelect = document.getElementById('servico');
+
     var servicoExplicacoes = {
+        celular: {
+            titulo: 'Assistência técnica para celulares',
+            texto: 'Diagnóstico, manutenção e suporte técnico para celulares, com foco em restaurar funcionamento, desempenho e confiabilidade do aparelho. Atendimento comum para marcas como Samsung, Xiaomi, iPhone, Motorola e modelos similares.'
+        },
         computador: {
             titulo: 'Manutenção de computadores e notebooks',
-            texto: 'Diagnóstico, limpeza, formatação, upgrade, remoção de vírus, troca de peças e otimização de desempenho para computadores e notebooks.'
+            texto: 'Diagnóstico, limpeza, upgrade, formatação, troca de peças e otimização de desempenho para manter seus equipamentos confiáveis no dia a dia.'
+        },
+        videogame: {
+            titulo: 'Assistência técnica para videogames',
+            texto: 'Avaliação, manutenção e correção de falhas em videogames para ajudar o cliente a recuperar desempenho, imagem, conectividade e estabilidade de uso.'
         },
         cftv: {
             titulo: 'Instalação e manutenção de câmeras CFTV',
-            texto: 'Projetos, instalação, configuração e manutenção de sistemas de câmeras de segurança para residências e empresas.'
+            texto: 'Implantação, organização e manutenção de sistemas de monitoramento para residências, comércios e empresas.'
         },
         redes: {
             titulo: 'Infraestrutura de redes e cabeamento',
-            texto: 'Montagem, organização e manutenção de redes cabeadas e Wi-Fi, cabeamento estruturado, racks e pontos de rede.'
+            texto: 'Montagem, organização e manutenção de redes cabeadas e Wi-Fi, incluindo cabeamento estruturado, racks e pontos de rede.'
         },
         suporte: {
             titulo: 'Suporte técnico para empresas',
-            texto: 'Atendimento remoto e presencial, resolução de problemas, manutenção preventiva e suporte em TI para empresas.'
+            texto: 'Atendimento remoto e presencial para rotina operacional, correção de falhas, orientação técnica e acompanhamento recorrente.'
         },
         acesso: {
             titulo: 'Controle de acesso',
-            texto: 'Soluções para controle de entrada e saída de pessoas, instalação de fechaduras eletrônicas, biometria e cartões.'
+            texto: 'Soluções para entrada e saída de pessoas, com instalação e configuração de fechaduras, biometria, cartões e dispositivos relacionados.'
         },
         impressora: {
             titulo: 'Manutenção de impressoras',
-            texto: 'Conserto, limpeza, troca de peças e configuração de impressoras de diversas marcas e modelos.'
+            texto: 'Conserto, limpeza, configuração e substituição de componentes para reduzir falhas e interrupções na rotina.'
+        },
+        aluguel: {
+            titulo: 'Aluguel de celulares e computadores',
+            texto: 'Locação de celulares e computadores para demandas temporárias, operação de equipes, contingência e apoio a rotinas empresariais.'
         },
         servidor: {
             titulo: 'Backup e configuração de servidores',
-            texto: 'Implantação, configuração e manutenção de servidores, rotinas de backup e segurança de dados.'
+            texto: 'Estruturação de rotinas de backup, configuração de servidores e organização do ambiente para mais continuidade e segurança.'
         },
         consultoria: {
             titulo: 'Consultoria em TI',
-            texto: 'Avaliação, planejamento e implementação de soluções tecnológicas sob medida para o seu negócio.'
+            texto: 'Avaliação do cenário atual, priorização de melhorias e indicação de soluções adequadas à estrutura e ao momento do cliente.'
+        },
+        intranet: {
+            titulo: 'Criação de intranet corporativa',
+            texto: 'Desenvolvimento de ambientes internos para comunicação, organização de informações, processos e acesso de equipes dentro da empresa.'
         },
         sites: {
             titulo: 'Criação de sites personalizados',
-            texto: 'Desenvolvimento de sites institucionais, landing pages e portfólios modernos, responsivos e otimizados para o seu negócio ou projeto.'
+            texto: 'Desenvolvimento de páginas institucionais e landing pages para apresentar sua empresa com mais clareza, credibilidade e presença digital.'
+        },
+        sistemas: {
+            titulo: 'Sites e sistemas comerciais',
+            texto: 'Estruturação de soluções digitais para apresentação comercial, operação e vendas, incluindo sites e sistemas voltados ao contexto do negócio.'
         }
     };
-    // Adiciona evento de clique para todos os cards de serviço (home e serviços)
-    var servicoCards = document.querySelectorAll('.servico-item[data-servico]');
-    servicoCards.forEach(function(card) {
-        card.addEventListener('click', function(e) {
-            // Evita abrir o modal ao clicar em links internos (se houver)
-            if (e.target.tagName === 'A') return;
-            var tipo = card.getAttribute('data-servico');
-            if (servicoExplicacoes[tipo] && modalServico && modalServicoTitle && modalServicoTexto && btnServicoWhats) {
-                modalServicoTitle.textContent = servicoExplicacoes[tipo].titulo;
-                modalServicoTexto.textContent = servicoExplicacoes[tipo].texto;
-                btnServicoWhats.href = 'https://wa.me/5534997227301?text=' + encodeURIComponent('Olá! Gostaria de solicitar orçamento para ' + servicoExplicacoes[tipo].titulo + '.');
-                modalServico.style.display = 'flex';
-                // Foco acessível
-                modalServico.querySelector('.close').focus();
-            }
-            e.preventDefault();
-            e.stopPropagation();
+
+    function openModal(modal) {
+        if (!modal) {
+            return;
+        }
+
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modal) {
+        if (!modal) {
+            return;
+        }
+
+        modal.style.display = 'none';
+
+        if (
+            (!formModal || formModal.style.display !== 'flex') &&
+            (!serviceModal || serviceModal.style.display !== 'flex')
+        ) {
+            document.body.style.overflow = '';
+        }
+    }
+
+    function setCurrentYear() {
+        var year = new Date().getFullYear();
+
+        yearElements.forEach(function (element) {
+            element.textContent = String(year);
         });
-        // Acessibilidade: abrir modal com Enter/Space
-        card.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                card.click();
+    }
+
+    function setActiveMenu() {
+        var currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+        navLinks.forEach(function (link) {
+            var href = link.getAttribute('href');
+            if (href === currentPath) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
             }
         });
+    }
+
+    function closeMobileMenu() {
+        if (!menuCentral || !menuToggle) {
+            return;
+        }
+
+        menuCentral.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    setCurrentYear();
+    setActiveMenu();
+
+    budgetButtons.forEach(function (button) {
+        button.addEventListener('click', function (event) {
+            if (formModal) {
+                event.preventDefault();
+                openModal(formModal);
+            } else {
+                window.open('https://wa.me/' + whatsappPhone + '?text=' + encodeURIComponent(defaultMessage), '_blank');
+            }
+        });
+    });
+
+    if (budgetClose) {
+        budgetClose.addEventListener('click', function () {
+            closeModal(formModal);
+        });
+    }
+
+    if (serviceClose) {
+        serviceClose.addEventListener('click', function () {
+            closeModal(serviceModal);
+        });
+    }
+
+    if (budgetForm) {
+        budgetForm.addEventListener('submit', function (event) {
+            var nome = document.getElementById('nome').value.trim();
+            var contato = document.getElementById('contato').value.trim();
+            var servico = document.getElementById('servico').value.trim();
+            var detalhes = document.getElementById('detalhes').value.trim();
+
+            event.preventDefault();
+
+            if (!nome || !contato || !servico || !detalhes) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+
+            var mensagem =
+                'Olá, meu nome é ' + nome + '.\n' +
+                'Quero solicitar orçamento para: ' + servico + '.\n' +
+                'Contato: ' + contato + '\n' +
+                'Detalhes: ' + detalhes;
+
+            window.open('https://wa.me/' + whatsappPhone + '?text=' + encodeURIComponent(mensagem), '_blank');
+            closeModal(formModal);
+            budgetForm.reset();
+        });
+    }
+
+    if (menuToggle && menuCentral) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+
+        menuToggle.addEventListener('click', function () {
+            var isOpen = menuCentral.classList.toggle('open');
+            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    }
+
+    serviceCards.forEach(function (card) {
         card.setAttribute('tabindex', '0');
         card.setAttribute('role', 'button');
-        card.setAttribute('aria-label', card.innerText);
-    });
-    if (closeServico && modalServico) {
-        closeServico.addEventListener('click', function() {
-            modalServico.style.display = 'none';
-        });
-    }
-    window.addEventListener('click', function(e) {
-        if (modalServico && e.target === modalServico) {
-            modalServico.style.display = 'none';
-        }
-    });
+        card.setAttribute('aria-label', card.innerText.trim());
 
-    // Menu expansivo responsivo
-    const menuToggle = document.getElementById('menuToggle');
-    const menuCentral = document.getElementById('menuCentral');
-    if (menuToggle && menuCentral) {
-        menuToggle.addEventListener('click', () => {
-            menuCentral.classList.toggle('open');
-        });
-        // Fecha o menu ao clicar em um link (mobile UX)
-        menuCentral.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuCentral.classList.remove('open');
-            });
-        });
-    }
+        function handleOpen() {
+            var tipo = card.getAttribute('data-servico');
+            var explicacao = servicoExplicacoes[tipo];
+            var nomeServico = card.querySelector('.servico-nome')
+                ? card.querySelector('.servico-nome').textContent.trim()
+                : '';
 
-    // Seleciona serviço no formulário ao clicar no card (desktop/mobile)
-    var servicoItems = document.querySelectorAll('.servico-item');
-    servicoItems.forEach(function(item) {
-        item.addEventListener('click', function(e) {
-            // Busca o nome do serviço (compatível com grids diferentes)
-            var nomeServico = item.querySelector('.servico-nome')?.textContent?.trim() || item.querySelector('span:last-child')?.textContent?.trim();
-            var select = document.getElementById('servico');
-            if (nomeServico && select) {
-                for (var i = 0; i < select.options.length; i++) {
-                    if (select.options[i].text.trim() === nomeServico) {
-                        select.selectedIndex = i;
-                        break;
+            if (serviceSelect && nomeServico) {
+                Array.prototype.forEach.call(serviceSelect.options, function (option, index) {
+                    if (option.text.trim() === nomeServico) {
+                        serviceSelect.selectedIndex = index;
                     }
-                }
+                });
             }
-            // Não abre modal de orçamento automaticamente, pois já há lógica para modal explicação
+
+            if (!explicacao || !serviceModal || !modalServicoTitle || !modalServicoTexto || !btnServicoWhats) {
+                return;
+            }
+
+            modalServicoTitle.textContent = explicacao.titulo;
+            modalServicoTexto.textContent = explicacao.texto;
+            btnServicoWhats.href = 'https://wa.me/' + whatsappPhone + '?text=' + encodeURIComponent('Olá! Gostaria de solicitar orçamento para ' + explicacao.titulo + '.');
+            openModal(serviceModal);
+        }
+
+        card.addEventListener('click', function (event) {
+            if (event.target.tagName === 'A') {
+                return;
+            }
+
+            handleOpen();
+        });
+
+        card.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                handleOpen();
+            }
         });
     });
 
-    // Fecha todos tooltips ao clicar fora (mobile)
-    document.body.addEventListener('click', function(e) {
-        if (window.innerWidth <= 900) {
-            servicoItems.forEach(function(item) {
-                if (e.target.classList && e.target.classList.contains('servico-whats')) return;
-                item.classList.remove('mostrar-desc');
-            });
+    window.addEventListener('click', function (event) {
+        if (event.target === formModal) {
+            closeModal(formModal);
+        }
+
+        if (event.target === serviceModal) {
+            closeModal(serviceModal);
         }
     });
-    // Acessibilidade: permite fechar com ESC
-    servicoItems.forEach(function(item) {
-        item.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                item.classList.remove('mostrar-desc');
-            }
-        });
+
+    window.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closeModal(formModal);
+            closeModal(serviceModal);
+            closeMobileMenu();
+        }
     });
 });
